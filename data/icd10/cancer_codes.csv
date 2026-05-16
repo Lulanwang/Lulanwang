@@ -1,0 +1,119 @@
+code,description,category,body_part
+C50.011,Malignant neoplasm of nipple and areola right female breast,malignant,breast
+C50.012,Malignant neoplasm of nipple and areola left female breast,malignant,breast
+C50.019,Malignant neoplasm of nipple and areola unspecified female breast,malignant,breast
+C50.111,Malignant neoplasm of central portion of right female breast,malignant,breast
+C50.112,Malignant neoplasm of central portion of left female breast,malignant,breast
+C50.119,Malignant neoplasm of central portion of unspecified female breast,malignant,breast
+C50.211,Malignant neoplasm of upper-inner quadrant of right female breast,malignant,breast
+C50.212,Malignant neoplasm of upper-inner quadrant of left female breast,malignant,breast
+C50.219,Malignant neoplasm of upper-inner quadrant of unspecified female breast,malignant,breast
+C50.311,Malignant neoplasm of lower-inner quadrant of right female breast,malignant,breast
+C50.312,Malignant neoplasm of lower-inner quadrant of left female breast,malignant,breast
+C50.319,Malignant neoplasm of lower-inner quadrant of unspecified female breast,malignant,breast
+C50.411,Malignant neoplasm of upper-outer quadrant of right female breast,malignant,breast
+C50.412,Malignant neoplasm of upper-outer quadrant of left female breast,malignant,breast
+C50.419,Malignant neoplasm of upper-outer quadrant of unspecified female breast,malignant,breast
+C50.511,Malignant neoplasm of lower-outer quadrant of right female breast,malignant,breast
+C50.512,Malignant neoplasm of lower-outer quadrant of left female breast,malignant,breast
+C50.519,Malignant neoplasm of lower-outer quadrant of unspecified female breast,malignant,breast
+C50.611,Malignant neoplasm of axillary tail of right female breast,malignant,breast
+C50.612,Malignant neoplasm of axillary tail of left female breast,malignant,breast
+C50.619,Malignant neoplasm of axillary tail of unspecified female breast,malignant,breast
+C50.811,Malignant neoplasm of overlapping sites of right female breast,malignant,breast
+C50.812,Malignant neoplasm of overlapping sites of left female breast,malignant,breast
+C50.819,Malignant neoplasm of overlapping sites of unspecified female breast,malignant,breast
+C50.911,Malignant neoplasm of unspecified site of right female breast,malignant,breast
+C50.912,Malignant neoplasm of unspecified site of left female breast,malignant,breast
+C50.919,Malignant neoplasm of unspecified site of unspecified female breast,malignant,breast
+C50.921,Malignant neoplasm of unspecified site of right male breast,malignant,breast
+C50.922,Malignant neoplasm of unspecified site of left male breast,malignant,breast
+C50.929,Malignant neoplasm of unspecified site of unspecified male breast,malignant,breast
+D05.10,Intraductal carcinoma in situ of unspecified breast,in_situ,breast
+D05.11,Intraductal carcinoma in situ of right breast,in_situ,breast
+D05.12,Intraductal carcinoma in situ of left breast,in_situ,breast
+D05.80,Other specified type of carcinoma in situ of unspecified breast,in_situ,breast
+D05.81,Other specified type of carcinoma in situ of right breast,in_situ,breast
+D05.82,Other specified type of carcinoma in situ of left breast,in_situ,breast
+D05.90,Unspecified type of carcinoma in situ of unspecified breast,in_situ,breast
+D05.91,Unspecified type of carcinoma in situ of right breast,in_situ,breast
+D05.92,Unspecified type of carcinoma in situ of left breast,in_situ,breast
+D24.1,Benign neoplasm of right breast,benign,breast
+D24.2,Benign neoplasm of left breast,benign,breast
+D24.9,Benign neoplasm of unspecified breast,benign,breast
+D48.60,Neoplasm of uncertain behavior of unspecified breast,uncertain,breast
+D48.61,Neoplasm of uncertain behavior of right breast,uncertain,breast
+D48.62,Neoplasm of uncertain behavior of left breast,uncertain,breast
+N63.0,Unspecified lump in unspecified breast,finding,breast
+N63.10,Unspecified lump in the right breast unspecified quadrant,finding,breast
+N63.20,Unspecified lump in the left breast unspecified quadrant,finding,breast
+R92.0,Mammographic microcalcification found on diagnostic imaging of breast,finding,breast
+R92.1,Mammographic calcification found on diagnostic imaging of breast,finding,breast
+R92.2,Inconclusive mammogram,finding,breast
+R92.8,Other abnormal and inconclusive findings on diagnostic imaging of breast,finding,breast
+Z12.31,Encounter for screening mammogram for malignant neoplasm of breast,screening,breast
+Z80.3,Family history of malignant neoplasm of breast,history,breast
+C34.00,Malignant neoplasm of unspecified main bronchus,malignant,lung
+C34.01,Malignant neoplasm of right main bronchus,malignant,lung
+C34.02,Malignant neoplasm of left main bronchus,malignant,lung
+C34.10,Malignant neoplasm of upper lobe unspecified bronchus or lung,malignant,lung
+C34.11,Malignant neoplasm of upper lobe right bronchus or lung,malignant,lung
+C34.12,Malignant neoplasm of upper lobe left bronchus or lung,malignant,lung
+C34.2,Malignant neoplasm of middle lobe bronchus or lung,malignant,lung
+C34.30,Malignant neoplasm of lower lobe unspecified bronchus or lung,malignant,lung
+C34.31,Malignant neoplasm of lower lobe right bronchus or lung,malignant,lung
+C34.32,Malignant neoplasm of lower lobe left bronchus or lung,malignant,lung
+C34.80,Malignant neoplasm of overlapping sites of unspecified bronchus and lung,malignant,lung
+C34.81,Malignant neoplasm of overlapping sites of right bronchus and lung,malignant,lung
+C34.82,Malignant neoplasm of overlapping sites of left bronchus and lung,malignant,lung
+C34.90,Malignant neoplasm of unspecified part of unspecified bronchus or lung,malignant,lung
+C34.91,Malignant neoplasm of unspecified part of right bronchus or lung,malignant,lung
+C34.92,Malignant neoplasm of unspecified part of left bronchus or lung,malignant,lung
+C78.00,Secondary malignant neoplasm of unspecified lung,metastatic,lung
+C78.01,Secondary malignant neoplasm of right lung,metastatic,lung
+C78.02,Secondary malignant neoplasm of left lung,metastatic,lung
+D14.30,Benign neoplasm of unspecified bronchus and lung,benign,lung
+D14.31,Benign neoplasm of right bronchus and lung,benign,lung
+D14.32,Benign neoplasm of left bronchus and lung,benign,lung
+D38.1,Neoplasm of uncertain behavior of trachea bronchus and lung,uncertain,lung
+R91.1,Solitary pulmonary nodule,finding,lung
+R91.8,Other nonspecific abnormal finding of lung field,finding,lung
+Z12.2,Encounter for screening for malignant neoplasm of respiratory organs,screening,lung
+Z87.39,Personal history of other diseases of the musculoskeletal system and connective tissue,history,lung
+Z80.1,Family history of malignant neoplasm of trachea bronchus and lung,history,lung
+C71.0,Malignant neoplasm of cerebrum except lobes and ventricles,malignant,brain
+C71.1,Malignant neoplasm of frontal lobe,malignant,brain
+C71.2,Malignant neoplasm of temporal lobe,malignant,brain
+C71.3,Malignant neoplasm of parietal lobe,malignant,brain
+C71.4,Malignant neoplasm of occipital lobe,malignant,brain
+C71.5,Malignant neoplasm of cerebral ventricle,malignant,brain
+C71.6,Malignant neoplasm of cerebellum,malignant,brain
+C71.7,Malignant neoplasm of brain stem,malignant,brain
+C71.8,Malignant neoplasm of overlapping sites of brain,malignant,brain
+C71.9,Malignant neoplasm of brain unspecified,malignant,brain
+C79.31,Secondary malignant neoplasm of brain,metastatic,brain
+C79.32,Secondary malignant neoplasm of cerebral meninges,metastatic,brain
+D33.0,Benign neoplasm of brain supratentorial,benign,brain
+D33.1,Benign neoplasm of brain infratentorial,benign,brain
+D33.2,Benign neoplasm of brain unspecified,benign,brain
+D33.3,Benign neoplasm of cranial nerves,benign,brain
+D33.4,Benign neoplasm of spinal cord,benign,brain
+D33.7,Benign neoplasm of other specified parts of central nervous system,benign,brain
+D33.9,Benign neoplasm of central nervous system unspecified,benign,brain
+D43.0,Neoplasm of uncertain behavior of brain supratentorial,uncertain,brain
+D43.1,Neoplasm of uncertain behavior of brain infratentorial,uncertain,brain
+D43.2,Neoplasm of uncertain behavior of brain unspecified,uncertain,brain
+D43.3,Neoplasm of uncertain behavior of cranial nerves,uncertain,brain
+D43.4,Neoplasm of uncertain behavior of spinal cord,uncertain,brain
+D43.8,Neoplasm of uncertain behavior of other specified parts of central nervous system,uncertain,brain
+D43.9,Neoplasm of uncertain behavior of central nervous system unspecified,uncertain,brain
+G93.5,Compression of brain,finding,brain
+G93.6,Cerebral edema,finding,brain
+G93.89,Other specified disorders of brain,finding,brain
+G93.9,Disorder of brain unspecified,finding,brain
+R90.0,Intracranial space-occupying lesion found on diagnostic imaging of central nervous system,finding,brain
+R90.81,Abnormal echoencephalogram,finding,brain
+R90.82,White matter disease unspecified,finding,brain
+R90.89,Other abnormal findings on diagnostic imaging of central nervous system,finding,brain
+Z80.7,Family history of malignant neoplasm of other organs or systems,history,brain
+Z85.841,Personal history of malignant neoplasm of brain,history,brain

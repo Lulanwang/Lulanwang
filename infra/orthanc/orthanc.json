@@ -1,0 +1,35 @@
+{
+  "Name": "lulan-pacs",
+  "RemoteAccessAllowed": true,
+  "AuthenticationEnabled": true,
+  "RegisteredUsers": {
+    "orthanc": "orthanc_dev_password"
+  },
+  "StorageDirectory": "/var/lib/orthanc/db",
+  "IndexDirectory": "/var/lib/orthanc/db",
+  "LimitFindResults": 200,
+  "LimitFindInstances": 200,
+  "DicomServerEnabled": true,
+  "DicomAet": "LULAN-PACS",
+  "DicomPort": 4242,
+  "HttpPort": 8042,
+  "HttpDescribeErrors": true,
+  "DicomWeb": {
+    "Enable": true,
+    "Root": "/dicom-web/",
+    "PublicRoot": "/dicom-web/",
+    "EnableMetadata": true,
+    "EnableWadoUriOverlay": false,
+    "Servers": {}
+  },
+  "PostgreSQL": {
+    "EnableIndex": true,
+    "EnableStorage": true,
+    "Host": "postgres",
+    "Port": 5432,
+    "Database": "orthanc",
+    "Username": "lulan",
+    "Password": "lulan_dev_password",
+    "Lock": false
+  }
+}
