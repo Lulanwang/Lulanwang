@@ -27,3 +27,10 @@ class Report(Base, TimestampMixin):
         UUID(as_uuid=True), ForeignKey("users.id"), nullable=True
     )
     signed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+    # AI free-text clinical narrative (MedGemma). Unverified, research-only.
+    clinical_narrative: Mapped[str | None] = mapped_column(Text, nullable=True)
+    narrative_model: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    narrative_generated_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )

@@ -47,6 +47,11 @@ def get_for_study(
         "signed_at": r.signed_at.isoformat() if r.signed_at else None,
         "signed_by": str(r.signed_by) if r.signed_by else None,
         "sr_available": bool(r.sr_path),
+        "clinical_narrative": r.clinical_narrative,
+        "narrative_model": r.narrative_model,
+        "narrative_generated_at": (
+            r.narrative_generated_at.isoformat() if r.narrative_generated_at else None
+        ),
     }
 
 

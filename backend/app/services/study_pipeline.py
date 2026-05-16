@@ -33,6 +33,7 @@ from app.fhir.diagnostic_report import diagnostic_report
 from app.models.base import StudyInput
 from app.models.registry import resolve_model
 from app.services import icd10, orthanc_client
+from app.services.medgemma import build_narrator
 
 log = logging.getLogger(__name__)
 
@@ -240,6 +241,37 @@ def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | 
         impression_lines = ["- No AI findings produced."]
     impression = "AI-generated draft impression:\n" + "\n".join(impression_lines)
 
+    # MedGemma narrative (research only). Failure here MUST NOT block the
+    # report — we persist whatever we got, then continue.
+    narrative_text: str | None = None
+    narrative_model: str | None = None
+    narrative_generated_at: datetime | None = None
+    try:
+        narrator = build_narrator()
+        narrative = narrator.narrate_sync(study=study, findings=findings)
+        if narrative.text:
+            narrative_text = narrative.text
+            narrative_model = f"{narrator.name}/{narrative.backend}:{narrative.model_id}"
+            narrative_generated_at = datetime.now(timezone.utc)
+        log_event(
+            db,
+            actor_id=signed_by,
+            actor_role=None,
+            action="report.narrative_generated",
+            resource_type="study",
+            resource_id=str(study.id),
+            request_id=None,
+            details={
+                "backend": narrative.backend,
+                "model_id": narrative.model_id,
+                "finding_count": len(findings),
+                "ok": bool(narrative.text),
+                "error": narrative.error,
+            },
+        )
+    except Exception as exc:  # noqa: BLE001
+        log.warning("medgemma narrator failed: %s", exc)
+
     sr_findings = [
         SRFinding(
             label=f.label,
@@ -256,6 +288,7 @@ def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | 
         modality=study.modality,
         findings=sr_findings,
         impression=impression,
+        narrative=narrative_text,
     )
     artifact_dir = Path(settings.artifact_dir) / str(study.id)
     artifact_dir.mkdir(parents=True, exist_ok=True)
@@ -270,6 +303,7 @@ def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | 
         icd10_codes=list(icd_codes),
         model_name=findings[0].model_name if findings else "MockModel",
         model_version=findings[0].model_version if findings else "0.0",
+        narrative=narrative_text,
     )
 
     report = (
@@ -282,6 +316,9 @@ def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | 
     report.icd10_codes = list(icd_codes)
     report.sr_path = str(sr_path)
     report.fhir_diagnostic_report = fhir_dr
+    report.clinical_narrative = narrative_text
+    report.narrative_model = narrative_model
+    report.narrative_generated_at = narrative_generated_at
     if signed_by:
         report.signed_by = signed_by
         report.signed_at = datetime.now(timezone.utc)

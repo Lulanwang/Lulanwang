@@ -77,6 +77,7 @@ def build_sr(
     modality: str,
     findings: list[SRFinding],
     impression: str,
+    narrative: str | None = None,
 ) -> FileDataset:
     file_meta = FileMetaDataset()
     file_meta.MediaStorageSOPClassUID = SR_COMPREHENSIVE_3D
@@ -146,6 +147,18 @@ def build_sr(
                 f.confidence,
                 "1",
                 "no units",
+            )
+        )
+
+    # AI free-text narrative (MedGemma). Always prefixed with the
+    # research-only disclaimer so downstream viewers can't strip it.
+    if narrative:
+        content.append(
+            _text_content(
+                "121106",
+                "DCM",
+                "Comment",
+                "Clinical narrative (MedGemma, RESEARCH USE ONLY):\n" + narrative,
             )
         )
 

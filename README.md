@@ -38,6 +38,9 @@ by `make seed`. The worklist will show the seeded studies.
 - **De-identification**: pydicom-based, DICOM PS3.15 Annex E Basic Profile
 - **ICD-10**: curated cancer-relevant subset (C50.x, C34.x, C71.x, etc.)
 - **Reporting**: DICOM SR (TID 1500) + FHIR DiagnosticReport JSON
+- **Narrative writer**: MedGemma (`google/medgemma-4b-it`) writes a
+  free-text clinical narrative on top of structured findings; mock
+  backend by default, Hugging Face Inference Endpoint when configured
 - **Audit**: append-only `audit_events` table, every PHI access logged
 
 ## Switching from mock to real AI

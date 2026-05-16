@@ -24,6 +24,16 @@ class Settings(BaseSettings):
     monai_bundle_dir: str = "/data/monai-bundles"
     breast_mammo_weights: str = ""
 
+    # --- MedGemma narrative writer ---
+    # backend: "mock" (default, deterministic template) or "hf"
+    # (POST to a Hugging Face Inference Endpoint serving MedGemma).
+    medgemma_backend: str = "mock"
+    medgemma_model_id: str = "google/medgemma-4b-it"
+    medgemma_hf_endpoint_url: str = ""
+    medgemma_hf_token: str = ""
+    medgemma_max_new_tokens: int = 512
+    medgemma_timeout_seconds: int = 20
+
     deid_date_shift_days_max: int = 90
 
     seed_admin_email: str = "admin@lulan.local"

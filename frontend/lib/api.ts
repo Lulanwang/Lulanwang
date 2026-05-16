@@ -118,6 +118,9 @@ export const api = {
       signed_at: string | null;
       signed_by: string | null;
       sr_available: boolean;
+      clinical_narrative: string | null;
+      narrative_model: string | null;
+      narrative_generated_at: string | null;
     }>(`/reports/study/${studyId}`),
 
   searchIcd10: (q: string) =>

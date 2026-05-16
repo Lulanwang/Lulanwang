@@ -91,6 +91,7 @@ production. Each row: `actor_id`, `actor_role`, `action`,
 | Multi-tenant org isolation | Backend | Row-level security per organization |
 | Penetration test | Security | Annual minimum |
 | SOC 2 Type II | Compliance | Audit artifact; out of scope for the code MVP |
+| Third-party LLM data egress (MedGemma) | Legal + Infra | Default `MEDGEMMA_BACKEND=mock` has no egress. When `MEDGEMMA_BACKEND=hf`, AI-generated finding labels + ICD-10 suggestions + study modality/body-part are sent to a Hugging Face Inference Endpoint. **No raw PHI / pixel data is sent** (Findings carry AI-derived semantic content only; the pipeline strips direct identifiers before pseudonymization), but the AI-derived content may still be considered PHI under §164.514. Production deployments using the `hf` backend need a signed BAA with HuggingFace **or** a self-hosted MedGemma endpoint inside the BAA-covered perimeter. |
 
 ## 6. Data flow summary
 

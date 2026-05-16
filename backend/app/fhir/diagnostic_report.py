@@ -56,9 +56,18 @@ def diagnostic_report(
     icd10_codes: list[str],
     model_name: str,
     model_version: str,
+    narrative: str | None = None,
 ) -> dict[str, Any]:
     code, display = LOINC_BY_MODALITY.get(modality.upper(), ("18748-4", "Diagnostic imaging Study"))
     now = datetime.now(timezone.utc).isoformat()
+    conclusion = (
+        impression
+        + "\n\nRESEARCH USE ONLY — NOT FOR DIAGNOSIS. Requires licensed radiologist review and signature before clinical use."
+    )
+    if narrative:
+        conclusion += (
+            "\n\nClinical narrative (MedGemma, RESEARCH USE ONLY):\n" + narrative
+        )
     return {
         "resourceType": "DiagnosticReport",
         "id": str(uuid.uuid4()),
@@ -90,8 +99,7 @@ def diagnostic_report(
         "imagingStudy": [
             {"identifier": {"system": "urn:dicom:uid", "value": f"urn:oid:{study_instance_uid}"}}
         ],
-        "conclusion": impression
-        + "\n\nRESEARCH USE ONLY — NOT FOR DIAGNOSIS. Requires licensed radiologist review and signature before clinical use.",
+        "conclusion": conclusion,
         "conclusionCode": [
             {
                 "coding": [

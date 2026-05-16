@@ -45,3 +45,22 @@ def test_sr_handles_no_findings():
         impression="No findings",
     )
     assert sr.SOPClassUID == "1.2.840.10008.5.1.4.1.1.88.34"
+
+
+def test_sr_embeds_narrative_when_provided():
+    sr = build_sr(
+        study_instance_uid="1.2.3.4",
+        patient_pseudonym="abcd1234",
+        modality="MR",
+        findings=[],
+        impression="No findings",
+        narrative="AI narrative: nothing remarkable on this study.",
+    )
+    text_items = [
+        str(item.TextValue)
+        for item in sr.ContentSequence
+        if getattr(item, "ValueType", "") == "TEXT"
+    ]
+    blob = "\n".join(text_items)
+    assert "MedGemma" in blob
+    assert "nothing remarkable" in blob
