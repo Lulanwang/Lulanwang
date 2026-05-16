@@ -23,6 +23,11 @@ seed-models:
 generate-synthetic:
 	docker compose exec backend python -m seed.dump_synthetic /data/artifacts/synthetic
 
+# Run the bundled + public pydicom-data DICOMs through the pipeline and
+# emit a Markdown + JSON analysis report.
+analyze-external:
+	docker compose exec backend python -m seed.analyze_external_data --out /data/artifacts/analysis
+
 test:
 	docker compose exec backend pytest -q
 

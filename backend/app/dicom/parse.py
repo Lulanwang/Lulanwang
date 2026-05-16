@@ -35,16 +35,25 @@ def read_dataset(path: Path) -> Dataset:
 
 
 def extract_study_meta(ds: Dataset) -> StudyMeta:
-    sd = getattr(ds, "StudyDate", "")
-    st = getattr(ds, "StudyTime", "")
+    sd = str(getattr(ds, "StudyDate", "") or "")
+    st = str(getattr(ds, "StudyTime", "") or "")
     study_date: datetime | None = None
     if sd:
         try:
             study_date = datetime.strptime(sd + (st[:6] if st else "000000"), "%Y%m%d%H%M%S")
         except ValueError:
             study_date = None
+    # Real-world DICOMs sometimes omit StudyInstanceUID (intentionally
+    # broken test fixtures, or post-anonymization tools that strip it).
+    # Synthesize a stable fallback rather than crashing — callers in
+    # the ingest path will reject the study upstream if they need a
+    # real UID.
+    study_uid = getattr(ds, "StudyInstanceUID", None)
+    if not study_uid:
+        sop = str(getattr(ds, "SOPInstanceUID", "") or "")
+        study_uid = f"unknown.{sop[-32:] or 'no-uid'}"
     return StudyMeta(
-        study_instance_uid=str(ds.StudyInstanceUID),
+        study_instance_uid=str(study_uid),
         patient_id=str(getattr(ds, "PatientID", "") or "anonymous"),
         modality=str(getattr(ds, "Modality", "") or "OT"),
         body_part=str(getattr(ds, "BodyPartExamined", "") or "UNKNOWN").upper(),
