@@ -41,6 +41,8 @@ PROMPT_SYSTEM = (
     "patient identifiers."
 )
 
+DEFAULT_HF_PATH = "/v1/chat/completions"
+
 
 @dataclass
 class NarrativeResult:
@@ -69,9 +71,10 @@ def _findings_block(findings: list[FindingRow]) -> str:
     return "\n".join(lines)
 
 
-def _build_prompt(study: Study, findings: list[FindingRow]) -> str:
+def _build_user_message(study: Study, findings: list[FindingRow]) -> str:
+    """User-turn content for chat models. The system prompt goes in a
+    separate message; legacy text-generation endpoints concat the two."""
     return (
-        f"{PROMPT_SYSTEM}\n\n"
         f"Study context:\n"
         f"- Modality: {study.modality}\n"
         f"- Body part: {study.body_part}\n"
@@ -79,6 +82,10 @@ def _build_prompt(study: Study, findings: list[FindingRow]) -> str:
         f"AI findings:\n{_findings_block(findings)}\n\n"
         f"Write the narrative now. Begin with: 'AI narrative (research only):'."
     )
+
+
+def _build_prompt(study: Study, findings: list[FindingRow]) -> str:
+    return f"{PROMPT_SYSTEM}\n\n{_build_user_message(study, findings)}"
 
 
 class MedGemmaNarrator:
@@ -90,7 +97,7 @@ class MedGemmaNarrator:
         self,
         *,
         backend: Literal["mock", "hf"] = "mock",
-        model_id: str = "google/medgemma-4b-it",
+        model_id: str = "google/medgemma-27b-text-it",
         hf_endpoint_url: str = "",
         hf_token: str = "",
         max_new_tokens: int = 512,
@@ -106,12 +113,12 @@ class MedGemmaNarrator:
     async def narrate(
         self, *, study: Study, findings: list[FindingRow]
     ) -> NarrativeResult:
-        prompt = _build_prompt(study, findings)
-        token_estimate = max(1, len(prompt) // 4)
+        user_msg = _build_user_message(study, findings)
+        token_estimate = max(1, (len(PROMPT_SYSTEM) + len(user_msg)) // 4)
         if self.backend == "mock":
             return self._mock(study, findings, token_estimate)
         if self.backend == "hf":
-            return await self._hf(prompt, token_estimate)
+            return await self._hf(user_msg, token_estimate)
         return NarrativeResult(
             text=None,
             backend=self.backend,
@@ -170,7 +177,7 @@ class MedGemmaNarrator:
             prompt_token_estimate=token_estimate,
         )
 
-    async def _hf(self, prompt: str, token_estimate: int) -> NarrativeResult:
+    async def _hf(self, user_msg: str, token_estimate: int) -> NarrativeResult:
         if not self.hf_endpoint_url:
             return NarrativeResult(
                 text=None,
@@ -183,22 +190,22 @@ class MedGemmaNarrator:
             "Authorization": f"Bearer {self.hf_token}" if self.hf_token else "",
             "Content-Type": "application/json",
         }
-        # Gemma chat template wrap. The HF Inference Endpoint accepts the
-        # raw text-generation shape; we leave higher-level chat templating
-        # to the endpoint's tokenizer config.
+        url = self.hf_endpoint_url.rstrip("/") + DEFAULT_HF_PATH
+        # vLLM / TGI OpenAI-compatible chat completions. The server's
+        # tokenizer applies the model's chat template, so we don't have
+        # to know whether it's Gemma-2 or Gemma-3 format.
         body: dict[str, Any] = {
-            "inputs": prompt,
-            "parameters": {
-                "max_new_tokens": self.max_new_tokens,
-                "temperature": 0.2,
-                "return_full_text": False,
-            },
+            "model": self.model_id,
+            "messages": [
+                {"role": "system", "content": PROMPT_SYSTEM},
+                {"role": "user", "content": user_msg},
+            ],
+            "max_tokens": self.max_new_tokens,
+            "temperature": 0.2,
         }
         try:
             async with httpx.AsyncClient(timeout=self.timeout_seconds) as client:
-                resp = await client.post(
-                    self.hf_endpoint_url, headers=headers, json=body
-                )
+                resp = await client.post(url, headers=headers, json=body)
                 resp.raise_for_status()
                 data = resp.json()
         except Exception as exc:  # noqa: BLE001

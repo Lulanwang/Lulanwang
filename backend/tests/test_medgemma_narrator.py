@@ -79,7 +79,21 @@ async def test_hf_backend_calls_endpoint_and_returns_text(monkeypatch):
             pass
 
         def json(self) -> Any:
-            return [{"generated_text": "AI narrative: looks like a small mass."}]
+            # OpenAI-compatible chat completions response (vLLM/TGI).
+            return {
+                "id": "stub",
+                "choices": [
+                    {
+                        "index": 0,
+                        "message": {
+                            "role": "assistant",
+                            "content": "AI narrative: looks like a small mass.",
+                        },
+                        "finish_reason": "stop",
+                    }
+                ],
+                "usage": {"prompt_tokens": 100, "completion_tokens": 10},
+            }
 
     class _Client:
         def __init__(self, *args, **kwargs):
@@ -101,17 +115,24 @@ async def test_hf_backend_calls_endpoint_and_returns_text(monkeypatch):
 
     narrator = MedGemmaNarrator(
         backend="hf",
-        hf_endpoint_url="https://endpoint.test/medgemma",
+        hf_endpoint_url="https://endpoint.test",
         hf_token="hf_test_token",
         max_new_tokens=128,
+        model_id="google/medgemma-27b-text-it",
     )
     out = await narrator.narrate(study=StubStudy(), findings=_findings())  # type: ignore[arg-type]
 
-    assert captured["url"] == "https://endpoint.test/medgemma"
+    # URL is suffixed with /v1/chat/completions
+    assert captured["url"] == "https://endpoint.test/v1/chat/completions"
     assert captured["headers"]["Authorization"] == "Bearer hf_test_token"
-    assert captured["json"]["parameters"]["max_new_tokens"] == 128
-    assert captured["json"]["parameters"]["return_full_text"] is False
-    assert "Suspected glioma" in captured["json"]["inputs"]
+    assert captured["json"]["model"] == "google/medgemma-27b-text-it"
+    assert captured["json"]["max_tokens"] == 128
+    # System + user messages
+    msgs = captured["json"]["messages"]
+    assert msgs[0]["role"] == "system"
+    assert "RESEARCH ONLY" in msgs[0]["content"]
+    assert msgs[1]["role"] == "user"
+    assert "Suspected glioma" in msgs[1]["content"]
 
     assert out.text is not None
     assert "looks like a small mass" in out.text

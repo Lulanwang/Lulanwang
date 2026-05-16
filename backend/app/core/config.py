@@ -28,7 +28,11 @@ class Settings(BaseSettings):
     # backend: "mock" (default, deterministic template) or "hf"
     # (POST to a Hugging Face Inference Endpoint serving MedGemma).
     medgemma_backend: str = "mock"
-    medgemma_model_id: str = "google/medgemma-4b-it"
+    # Set this to whatever model id your endpoint reports at GET /v1/models —
+    # e.g. "google/medgemma-27b-text-it" (text-only 27B) or
+    # "google/medgemma-4b-it" (multimodal 4B). For self-hosted vLLM/TGI
+    # endpoints, this MUST match the --served-model-name flag.
+    medgemma_model_id: str = "google/medgemma-27b-text-it"
     medgemma_hf_endpoint_url: str = ""
     medgemma_hf_token: str = ""
     medgemma_max_new_tokens: int = 512
