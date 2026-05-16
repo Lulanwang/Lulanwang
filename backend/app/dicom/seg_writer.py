@@ -27,6 +27,34 @@ class SegWriteResult:
     is_real_seg: bool  # True if it's an actual DICOM SEG; False if fallback
 
 
+# Attributes highdicom expects on the source images but PS3.15 Annex E
+# de-identification removes. We restore empty-string placeholders on a
+# shallow copy so the SEG write succeeds without leaking PHI.
+_REQUIRED_FOR_SEG: tuple[str, ...] = (
+    "AccessionNumber",
+    "StudyID",
+    "PatientName",
+    "PatientID",
+    "PatientBirthDate",
+    "PatientSex",
+    "StudyDate",
+    "StudyTime",
+    "ReferringPhysicianName",
+)
+
+
+def _ensure_required_for_seg(ds: Dataset) -> Dataset:
+    """Return a shallow copy of `ds` with empty placeholders for the
+    tags highdicom needs but PS3.15 Annex E de-id removes."""
+    from copy import copy as _copy
+
+    out = _copy(ds)
+    for tag in _REQUIRED_FOR_SEG:
+        if not getattr(out, tag, None):
+            setattr(out, tag, "")
+    return out
+
+
 def write_segmentation(
     *,
     mask: np.ndarray,           # (H, W) or (Z, H, W), uint8 (0 = bg, >=1 = labels)
@@ -88,6 +116,13 @@ def _write_highdicom(
 
     if not source_datasets:
         raise ValueError("source_datasets required for DICOM SEG")
+
+    # highdicom copies a handful of attributes off the source image
+    # (AccessionNumber, StudyID, StudyDate, …). De-identified inputs
+    # have these stripped per PS3.15 Annex E, so we backfill empty
+    # values on a shallow copy to keep highdicom happy without
+    # mutating the caller's datasets.
+    source_datasets = [_ensure_required_for_seg(d) for d in source_datasets]
 
     # Ensure mask has a z-axis (highdicom expects (frames, rows, cols))
     if mask.ndim == 2:

@@ -54,6 +54,34 @@ SOURCES: list[HFSource] = [
             ("MR-hippocampal-sparing-dataset.zip", "mr_hippocampal", 20),
         ],
     ),
+    HFSource(
+        repo="hamshkhawar/dicom_mr",
+        description="Brain MR (HEAD) files at 132 KB each with full pixel data; ~24+ files in root.",
+        files=[
+            ("MR.1.2.246.352.221.46143004376852813134301961390876485803.dcm", "hamshkhawar_mr_01.dcm"),
+            ("MR.1.2.246.352.221.4621063047905191202691661742037890182.dcm", "hamshkhawar_mr_02.dcm"),
+            ("MR.1.2.246.352.221.462450701736744205016277432281183609246.dcm", "hamshkhawar_mr_03.dcm"),
+            ("MR.1.2.246.352.221.46297015904340189044141217763381418905.dcm", "hamshkhawar_mr_04.dcm"),
+            ("MR.1.2.246.352.221.46302418903211096267121676894464665267.dcm", "hamshkhawar_mr_05.dcm"),
+            ("MR.1.2.246.352.221.46340985649020190815336545634186719930.dcm", "hamshkhawar_mr_06.dcm"),
+            ("MR.1.2.246.352.221.46362783886722895682180439798989603972.dcm", "hamshkhawar_mr_07.dcm"),
+            ("MR.1.2.246.352.221.463783650467046098016227961990833666436.dcm", "hamshkhawar_mr_08.dcm"),
+        ],
+        zips=[],
+    ),
+    HFSource(
+        repo="SR219/dicom-read",
+        description=(
+            "Synthetic brain-MRI DICOMs (1000 instances, 884 B each) — METADATA ONLY, "
+            "no pixel data. Useful for verifying parse/de-id/route still work when pixels "
+            "are missing (which the burned-in / data-corruption edge cases also exercise)."
+        ),
+        files=[
+            (f"test_data/MRN001_20240115_DWI_000{i}.dcm", f"sr219_dwi_im0{i}.dcm")
+            for i in range(1, 9)
+        ],
+        zips=[],
+    ),
 ]
 
 

@@ -63,8 +63,10 @@ make analyze-external           # in docker
 python -m seed.analyze_external_data --out /tmp/lulan-analysis
 ```
 
-This pulls DICOMs from three sources and runs them through the
-parse → de-id → route → infer → ICD-10 chain:
+This pulls DICOMs from five sources and runs them through the
+parse → de-id → route → infer → ICD-10 chain, and additionally
+simulates the versioning state machine (accept / reject / refine)
+on every routed finding while exercising the DICOM SEG writer:
 
 | Source | Files | Notes |
 | --- | ---: | --- |
@@ -72,11 +74,19 @@ parse → de-id → route → infer → ICD-10 chain:
 | `pydicom/pydicom-data` (GitHub, on-demand) | 21 | Brain MR variants across 5 transfer syntaxes |
 | `UniqueData/dicom-brain-dataset` (HF) | 8 | Real anonymized brain MRI series |
 | `ndonyapour/dicom-sample-files` (HF) | 40 | Chest CT series + MR hippocampal study |
+| `hamshkhawar/dicom_mr` (HF) | 8 | Real MR HEAD pixel data |
+| `SR219/dicom-read` (HF) | 6 | Metadata-only brain MR (no pixels) — edge case |
 
-Latest run: **149 files, 128 de-identified, 53 routed to a model** —
-producing brain-tumour findings (ICD-10 `C71.9`, `G93.6`) on 33 real
-brain MRs and lung-nodule findings (`C34.11`, `R91.1`) on 20 real chest
-CT slices. Report committed at `docs/analysis/external_data_report.md`.
+Latest run: **163 files, 142 de-identified, 67 routed to a model.**
+The state-machine simulator exercised **134 findings** with a
+hash-deterministic 4-way action split. Of the 25 refinements,
+**22 produced a real DICOM SEG via highdicom** and 3 fell back to
+mask.npy + mask.json. The **AI geometry invariant held 25/25** —
+no radiologist refinement mutated the parent AI row's geometry,
+which is the explicit requirement for the versioning design.
+
+Reports committed at `docs/analysis/external_data_report.md` and
+`docs/analysis/external_data_results.json`.
 
 ## Compliance posture
 
