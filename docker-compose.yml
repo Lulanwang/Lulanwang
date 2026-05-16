@@ -1,0 +1,95 @@
+name: lulan-dicom
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  orthanc:
+    image: orthancteam/orthanc:24.10.1
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - orthanc-storage:/var/lib/orthanc/db
+      # Single source of truth for Orthanc config. The JSON file
+      # references the same credentials as .env so they stay in sync.
+      - ./infra/orthanc/orthanc.json:/etc/orthanc/orthanc.json:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -u ${ORTHANC_USER}:${ORTHANC_PASSWORD} http://localhost:8042/system || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build:
+      context: ./backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+      orthanc:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - artifacts:/data/artifacts
+      - monai-bundles:/data/monai-bundles
+      - ./data/icd10:/app/data/icd10:ro
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  frontend:
+    build:
+      context: ./frontend
+    depends_on:
+      - backend
+    environment:
+      NEXT_PUBLIC_API_BASE: /api/v1
+      NEXT_PUBLIC_DICOMWEB_BASE: /dicom-web
+      NEXTAUTH_URL: ${PUBLIC_BASE_URL}
+      NEXTAUTH_SECRET: ${APP_SECRET}
+      INTERNAL_API_BASE: http://backend:8000/api/v1
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  caddy:
+    image: caddy:2.8-alpine
+    depends_on:
+      - frontend
+      - backend
+      - orthanc
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    environment:
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL}
+
+volumes:
+  pgdata:
+  orthanc-storage:
+  artifacts:
+  monai-bundles:
+  caddy-data:
+  caddy-config:

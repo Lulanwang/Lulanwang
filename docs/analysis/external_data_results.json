@@ -1,0 +1,6784 @@
+[
+  {
+    "source": "pydicom",
+    "name": "rtstruct.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.3",
+    "sop_class_accepted": false,
+    "modality": "RTSTRUCT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "f09f1f12a75efa91a8456554b7e45afe",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "JPEGLSNearLossless_08.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "image_dfl.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "rtplan.dump",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "JPEG2000.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "NM",
+    "body_part": "WHOLE BODY",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "a081d23cdd8402baf20dd752be60561b",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "JPEGLSNearLossless_16.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_rle_32bit.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_jpeg_gdcm.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_gdcm_KY.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_dcmtk_+eb+cy+n1.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_jpeg.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "JPEG2000-embedded-sequence-delimiter.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "NM",
+    "body_part": "WHOLE BODY",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "a081d23cdd8402baf20dd752be60561b",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "rtplan.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.5",
+    "sop_class_accepted": false,
+    "modality": "RTPLAN",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "cb4b7d9729cda00f6784d09ffbb08d5f",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "badVR.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.2",
+    "sop_class_accepted": false,
+    "modality": "RTDOSE",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bb9b861412c3c4880711f09ea90e9ce4",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "reportsi.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.88.11",
+    "sop_class_accepted": false,
+    "modality": "SR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "test-SR.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.88.33",
+    "sop_class_accepted": true,
+    "modality": "SR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_dcmtk_+eb+cy+s4.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "examples_overlay.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "ABDOMEN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "063606038e7424ede2645421f6f9cf3a",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "dicomdirtests",
+    "sop_class_uid": null,
+    "sop_class_accepted": false,
+    "modality": null,
+    "body_part": null,
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": null,
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": "read failed: [Errno 21] Is a directory: '/home/user/Lulanwang/backend/.venv/lib/python3.11/site-packages/pydicom/data/test_files/dicomdirtests'"
+  },
+  {
+    "source": "pydicom",
+    "name": "rtdose_rle_1frame.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.2",
+    "sop_class_accepted": false,
+    "modality": "RTDOSE",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bb9b861412c3c4880711f09ea90e9ce4",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "GDCMJ2K_TextGBR.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_jpeg_dcmtk.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_small_odd_big_endian.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "rtdose_rle.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.2",
+    "sop_class_accepted": false,
+    "modality": "RTDOSE",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bb9b861412c3c4880711f09ea90e9ce4",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "rtdose_1frame.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.2",
+    "sop_class_accepted": false,
+    "modality": "RTDOSE",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bb9b861412c3c4880711f09ea90e9ce4",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "zipMR.gz",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "rtstruct.dump",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_rle_2frame.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_jpeg_app14_dcmd.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "liver_expb_1frame.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.66.4",
+    "sop_class_accepted": true,
+    "modality": "SEG",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "0f38adf9fa55efc63ad00806b9824e48",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_rle_16bit_2frame.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "crayons.icc",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "JPEG-lossy.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "NM",
+    "body_part": "WHOLE BODY",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "a081d23cdd8402baf20dd752be60561b",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "examples_rgb_color.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.6.1",
+    "sop_class_accepted": false,
+    "modality": "US",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "b4c4612ef5b4fc2e5cc1e49236226362",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "examples_palette.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.6.1",
+    "sop_class_accepted": false,
+    "modality": "US",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "255fe62577bcd9a6c3385fc353151c73",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "UN_sequence.dcm",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "examples_jpeg2k.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.6.1",
+    "sop_class_accepted": false,
+    "modality": "US",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "b4c4612ef5b4fc2e5cc1e49236226362",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_small_odd_jpeg.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "no_meta_group_length.dcm",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_jls_lossy_sample.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_rle.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "reportsi_with_empty_number_tags.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.88.11",
+    "sop_class_accepted": false,
+    "modality": "SR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_small_odd.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "MR_small_jpeg_ls_lossless.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "07edec6e02d5f46bcba45f6c649cf053",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "rtplan_truncated.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.5",
+    "sop_class_accepted": false,
+    "modality": "RTPLAN",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "cb4b7d9729cda00f6784d09ffbb08d5f",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_jls_lossy_line.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "ExplVR_BigEnd.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.6.1",
+    "sop_class_accepted": false,
+    "modality": "US",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "liver_1frame.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.66.4",
+    "sop_class_accepted": true,
+    "modality": "SEG",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "0f38adf9fa55efc63ad00806b9824e48",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_dcmtk_+eb+cr.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "rtdose_expb_1frame.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.2",
+    "sop_class_accepted": false,
+    "modality": "RTDOSE",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bb9b861412c3c4880711f09ea90e9ce4",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_ybr_full_422_uncompressed.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "README.txt",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "meta_missing_tsyntax.dcm",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "examples_ybr_color.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.3.1",
+    "sop_class_accepted": false,
+    "modality": "US",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "53be02288cf333807bd35faf31554902",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "nested_priv_SQ.dcm",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "JPGExtended.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "NM",
+    "body_part": "WHOLE BODY",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "a081d23cdd8402baf20dd752be60561b",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_jpeg_no_color_transform.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "J2K_pixelrep_mismatch.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "a524a5350486502b9a3b377d1bc41974",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_jpeg_no_color_transform_2.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "CT_small.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "9c72023761883af4eeb83120b2681336",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_jpeg_dcmd.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "test_PN.json",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "ExplVR_LitEndNoMeta.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.8",
+    "sop_class_accepted": false,
+    "modality": "RTPLAN",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "MR_small.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "07edec6e02d5f46bcba45f6c649cf053",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "test1.json",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "MR_small_bigendian.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "07edec6e02d5f46bcba45f6c649cf053",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_rle_16bit.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "waveform_ecg.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.9.1.1",
+    "sop_class_accepted": false,
+    "modality": "ECG",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "f364c76c1012ea11be60fcbae4136257",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_jpeg_lossy_gdcm.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "rtdose.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.2",
+    "sop_class_accepted": false,
+    "modality": "RTDOSE",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bb9b861412c3c4880711f09ea90e9ce4",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "MR_small_padded.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "07edec6e02d5f46bcba45f6c649cf053",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "ExplVR_BigEndNoMeta.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.481.8",
+    "sop_class_accepted": false,
+    "modality": "RTPLAN",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "no_meta.dcm",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "priv_SQ.dcm",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "SC_rgb_dcmtk_+eb+cy+np.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": false,
+    "deid_blocked_reason": "Modality=OT requires manual pixel-PHI QA",
+    "pseudonym": null,
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "empty_charset_LEI.dcm",
+    "sop_class_uid": "",
+    "sop_class_accepted": false,
+    "modality": "OT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "693_J2KI.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "4445127ee5f82f43cd99dea03f76368f",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "MR_small_expb.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "07edec6e02d5f46bcba45f6c649cf053",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "MR_small_RLE.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "07edec6e02d5f46bcba45f6c649cf053",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom",
+    "name": "MR_small_jp2klossless.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "07edec6e02d5f46bcba45f6c649cf053",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "emri_small.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4.1",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "7ef491a1b3b210d002874f43f03cfbb540a012f47babd59581963f31dc5bf8c9",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "emri_small.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "c009ba86af8a70ed1e5e16860ca86a3e22acd6dc17abda77f8c636724cfcd241",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "emri_small.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "emri_small_RLE.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4.1",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "6834543d6d30d73fd29946d3d0c1bc4538589d0506f74de6a7965ef7775ea147",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "emri_small_RLE.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "59f8c4a8c61de3b294345630589ba773962483c67f99e1a52bc9bd77d7c930f9",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "emri_small_RLE.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "emri_small_big_endian.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4.1",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "7fbab35e1ae10edc5747844f7646d90aca292b52429c1ecf686985690f3c3d86",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "emri_small_big_endian.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "c9602ab14b8a9db4569291ed3b596ba29ddd08ee561dea4ba55b165234535fe0",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "emri_small_big_endian.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "emri_small_jpeg_2k_lossless.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4.1",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "bd2e1805d33be58ce0dcb1658d5176fb2bbea0a2c13e7644415e3c442f6bcb43",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": false,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_bd2e1805d33b/mask.npy",
+        "invariant_holds": true,
+        "seed": "emri_small_jpeg_2k_lossless.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "00e1f9b2f3cb68d40026a0ed37b310250f077b03eb7f2bcbf317ab96a3a90cb6",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "emri_small_jpeg_2k_lossless.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "emri_small_jpeg_ls_lossless.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4.1",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "3bd915ce52432528aa634e0d66af340d2d4f35d134f9e9fa7fbdb57185e62fc0",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "emri_small_jpeg_ls_lossless.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "938921074a5a52bf878c1b657ce15b013c47540e4654b1f37961d250959f1df7",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "emri_small_jpeg_ls_lossless.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "MR2_J2KI.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "395dff759291881695226a9ea22d8e07",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "MR2_J2KR.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "395dff759291881695226a9ea22d8e07",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "MR2_UNCI.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "395dff759291881695226a9ea22d8e07",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "MR2_UNCR.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "395dff759291881695226a9ea22d8e07",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "MR-SIEMENS-DICOM-WithOverlays.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "ABDOMEN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "063606038e7424ede2645421f6f9cf3a",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "693_J2KI.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "4445127ee5f82f43cd99dea03f76368f",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "693_UNCR.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "4445127ee5f82f43cd99dea03f76368f",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "eCT_Supplemental.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2.1",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "ac9c1d58ac88ad751960ba413ed6e377",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "CT_small.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "9c72023761883af4eeb83120b2681336",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "RG1_UNCR.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.1",
+    "sop_class_accepted": true,
+    "modality": "CR",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "0e9ef69539e974edf9a6cc0375936d0e",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "RG3_UNCR.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.1",
+    "sop_class_accepted": true,
+    "modality": "CR",
+    "body_part": "EXTREMITY",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "5693348ad7f59bdeb7d334cc010edde6",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "US1_UNCR.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.6.1",
+    "sop_class_accepted": false,
+    "modality": "US",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "b4c4612ef5b4fc2e5cc1e49236226362",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "OBXXXX1A.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.6.1",
+    "sop_class_accepted": false,
+    "modality": "US",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "255fe62577bcd9a6c3385fc353151c73",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "JPEG-LL.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.7",
+    "sop_class_accepted": true,
+    "modality": "NM",
+    "body_part": "WHOLE BODY",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "a081d23cdd8402baf20dd752be60561b",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "color3d_jpeg_baseline.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.3.1",
+    "sop_class_accepted": false,
+    "modality": "US",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "53be02288cf333807bd35faf31554902",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "pydicom-data (github)",
+    "name": "JPGLosslessP14SV1_1s_1f_8b.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.6.1",
+    "sop_class_accepted": false,
+    "modality": "US",
+    "body_part": "UNKNOWN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "bbc25bbcee4b7376c3fd54780ded1d98",
+    "model_key": null,
+    "model_name": null,
+    "finding_count": 0,
+    "findings": [],
+    "icd10_codes": [],
+    "state_machine": [],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im1.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "40aca27d63f4e957b43308c3d987ff898933bc708176fa4e255b2c550cca0ee1",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im1.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "aed733790c69dc289f69ae570c93d2263ff1804b34e8e0f7fc6b6a54d32eb615",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im1.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im2.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "b8c0774dded4d5cfe8490be4931ee570201f681c6a11d67d912406d9cd42a067",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im2.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "896fcbf187b2f4f3462f6b1c1d4760a7d846f091165dda654cab638c4cbc9487",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im2.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im3.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "366dbe7b283d1d98609e920d05499c48b5a5fc1a2757d5b5aa6a3d61623eff01",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im3.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "89a717cdde5143e115d7fb378d0c24d388024396236bee17c947e0c590ff6232",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im3.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im4.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "28af96451ad3af1ea69e2f0721c697084d2a7964b2427cae867c416dbca25118",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im4.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "e2eecde8bc612b2d75349a8dd0accad53eb61d78849dff4e911b4fa6f3c73359",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_e2eecde8bc61/seg_069d154c.dcm",
+        "invariant_holds": true,
+        "seed": "brain_se2_im4.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im5.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "affbc7198ef64962e435b6ab69193119239b7d364ea58da5bf4934b345ee59cd",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im5.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "dcea7ceb6b2bda6132fbe9f3408f7f9401b4ef536867f627f07d300ad8b4ed3c",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im5.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im6.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "4895bd1851246bf7b994c8d2bbd88f50bfa9d36347dd61fe4ab2ffa283398ae7",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im6.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "49b9e72e2b5696ec6d4cb0576a7e56984e41d026f83922a2a354864f53378060",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im6.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im7.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "3be20ed436b2ab601ff597b82559a535beaf2a9f5f0414ac769ed207c31e57d2",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im7.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "b4e5b772d9efa62627f3fa70255d0bcec859cab5c629942888a15c09f0f3bba0",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im7.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im8.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "4b20a019c7e11cf44b44ba2a569b212e572ec9de3cbfaca0090f115eb13ff349",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "brain_se2_im8.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "46f2b4f365e63815a9b097c61184a7005b91796a44a42769fa2adedb2d83e4cf",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_46f2b4f365e6/seg_8c287018.dcm",
+        "invariant_holds": true,
+        "seed": "brain_se2_im8.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0001.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "0a8b69bdd898617f1f7058442ae78c13eb3b857b306a3baf98636c59b97fe9d2",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_0a8b69bdd898/seg_254d5519.dcm",
+        "invariant_holds": true,
+        "seed": "0000-0001.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "7cbf649570b922c5a7945623cfc8f5d452107674e207c26eae7bc983544297a5",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0001.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0002.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "1e551d2f752b0c8c26cfdbc593cb140897e84d8d62f13d9dab8ec39e83eee2be",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0002.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "7334d862b726843326c2d1e621bf7221df4e343902b681838e7a457129a20b76",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0002.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0003.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "aa29e0877c357559312eca564bf8bcba7adb4d51533b8b9bea205b85f19c53a0",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0003.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "896b4cda66614b462ab393ed1d9a9d9af0e1ac8b5e5fb45cce421845103b8680",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0003.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0004.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "901d549ac8623c06e632f04f79855dda4f701200cd424d29c076c1478529486f",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0004.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "8dcbc7f3092a9d476a3ea658447e24d8f184669384447fb91737d2e16fc0dee9",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0004.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0005.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "aeb217c0890a305850e79cfa7c0e80b213c112d8bbd4a261901d306d7550a2e9",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0005.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "cefb5774d643bd777d2017000003f55b9b634e49351d2df0fe86b160c038280f",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0005.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0006.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "654f1beade6362a8846dd714fb49568595d9ce39d53f172c29e9548a66da5299",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0006.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "3fcbcdb6a3809086f9f3b0351502f93d20947dfb3641caf4467ca9e9cb43761c",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0006.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0007.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "e8d1f8be11cbafaaf497cda177cf604572716e583b760e5c69593d085556fa1e",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0007.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "ef777af9bcea768ffb54b08bc8a7b65f9f9bc15705ac80ceae5630ff3a416c52",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0007.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0010.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "ab9db014c72a35f9ade950d753dac5549584904cbbb6ee3ce8930aab60909f4d",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_ab9db014c72a/seg_ea484bfb.dcm",
+        "invariant_holds": true,
+        "seed": "0000-0010.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "ef10855be3b5dbaef71a61f02f90f3cb76f46fd21a2d44e8357d39d1e3027cde",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0010.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0011.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "155cfd1fa2930ef9c7524f5cab027885670fbbb9e37562fdabd18958b7a9a15f",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0011.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "4abb72864f15b1f928225a86ba4395769f4ae37148a646e9312d6332c85a1ab6",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0011.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0012.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "ae08c71e59be8666746ba2f669844f3f4b85f4d8c0a450f73eea8face7ab84e5",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0012.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "96d28440ef2f5d53025cec1eeb037340d2cddfdf32c5b001eae960f22eda1966",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0012.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0013.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "4cac618a8735790c327d525a73b8ee67388a5486dbefdf38ff94c406119b34fd",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0013.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "0c9ed6c0637e8cdad39ca8bbbae8b9cf108ee93fd397d6e8e184871f8d4f79b5",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0013.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0014.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "6e2aefd048a09c369f7a3ab6d4c946a55814a7c2235ebc610de2be05b3bfdba5",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0014.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "e573f5eafa34cd60186c558e46d43ab57cbf86cdf612dd4a16ce7e5fbf69c9cc",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_e573f5eafa34/seg_3cabd149.dcm",
+        "invariant_holds": true,
+        "seed": "0000-0014.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0015.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "a0bc244dc802402c0190214e019647507c2af5f74142fbb91b202119a28cb54f",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0015.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "ac0f4b402c477032a819372c11313acc32d1685d79bb53f00e00ace22169314d",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0015.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0016.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "1d97323b5d0df3e60d77377e93510486164098823d9c908bf8e05143e14d558a",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0016.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "1b8a66f2ef8a4e4ddf4989e65ce92b2f37c92c20cc110c222383e1d791ddfc1f",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_1b8a66f2ef8a/seg_20daf309.dcm",
+        "invariant_holds": true,
+        "seed": "0000-0016.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0017.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "0d88d82b6d1f8be18ac64205556d98eee3568d62447c4b8f9111a9623f8b5f06",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0017.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "6fa5cc5916c4e3bca411e415d24fc1809d0270669d8bed5ed4e777340aa52409",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0017.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0028.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "92ba30298ddefb180659151f6225941fe323ee7404fa41296ee403df263d70fc",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0028.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "1c1c66e986b03a1aea6f707901993792024693cf0de697dd13dfaeae18f599a7",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_1c1c66e986b0/seg_50b06e58.dcm",
+        "invariant_holds": true,
+        "seed": "0000-0028.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0029.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "83b78d923bd7a3addc00ad8d3b00b88fc7bd1f90ade52ede737d4edd15757068",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_83b78d923bd7/seg_c2a172dc.dcm",
+        "invariant_holds": true,
+        "seed": "0000-0029.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "8faa28ecc595f1bc7eb9905b4fa60209438e2fe507c1ed1b984c983bfd683046",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0029.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0038.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "082fe43f4631d3c7f2cd8e53ca3a171557082f838e9e5f9a75ef6f627903ac5f",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_082fe43f4631/seg_e651ea0d.dcm",
+        "invariant_holds": true,
+        "seed": "0000-0038.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "f9969f4070f1da0d48619a51af3ffe1de69c837cda01cdd12d17beb25a1d8ce9",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0038.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0039.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "6d26af2645a31ca373633e19ecb8e5018012891d95606dc070913678b947cbb7",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_6d26af2645a3/seg_7955e9fb.dcm",
+        "invariant_holds": true,
+        "seed": "0000-0039.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "a38164e775d007667245bd8ae5d9adfc30b7dbbdf91cf047c20729398f2cd4e5",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0039.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0040.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "cd21f8ef0766ac82b9628e36abfd491b45940b8bc3f47a0d7a9d14367290b9e1",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.62,
+          "y": 0.55,
+          "w": 0.04,
+          "h": 0.04
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0040.dcm:Solitary pulmonary nodule, 9 mm (mock):0"
+      },
+      {
+        "finding_id": "9019a3817a311f8144f84182b3ac34c96072e7a454f1fb1c0c3070adb917526f",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "0000-0040.dcm:Suspicious right upper lobe lesion (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.46610297499567687196592583109429057944.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "77c5845c5795b92a97a534db174d25ddd446642fc294b2e1c43ca4c28abe58b2",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.46610297499567687196592583109429057944.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "6ecd1aa8dceda2022688d35616bba1b75dd8b1e25b44c8f03c5c5f165dd525fe",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.46610297499567687196592583109429057944.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.467164805038492957816710728990450920620.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "3a762bd0bed835f281a3d4bfecdbc77b036382751f0ff786562bc35532e96b17",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_3a762bd0bed8/seg_d067a5f3.dcm",
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.467164805038492957816710728990450920620.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "d83db0abaa7d15b6fdd6d362a222d08308b53e93ea94704340db3c34515d03cd",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.467164805038492957816710728990450920620.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.476773578876226308210400700478635739542.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "faee3573fb50c2ab25e6a01d58f3c7224992b5afc889339bbf5b85a4ab2fb617",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_faee3573fb50/seg_a3fb68f5.dcm",
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.476773578876226308210400700478635739542.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "28096cf6e3f3faa35ed82c05f13ef5b363e8c05455794be0196745953c966b1c",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.476773578876226308210400700478635739542.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.485338369609277286714498284938911832210.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "00b476eb68d221ace890a3cc19df55440f1f9100016006a7b65631627e75d271",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.485338369609277286714498284938911832210.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "8f820e96cee2634871a5d90d91b8d269dbca87a9d41fbc8c930a50c1bb8567f5",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.485338369609277286714498284938911832210.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.49344270271225281836435642048299515802.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "fce2f601ea159cedeb6f6b7f0bc4a389119ac3bdb27aaf6a0230efeac93387d0",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_fce2f601ea15/seg_e8563baf.dcm",
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.49344270271225281836435642048299515802.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "aa65e38f15e9816238cc987b60e5d4ad9add9ca3d888c34bef3d59915fc68a76",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.49344270271225281836435642048299515802.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.49425505473402902245619940186516114354.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "a3ad7b80d9d1683931f5ad9d5fa7dd8f8780041f1d061cb7140636eade685f5d",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.49425505473402902245619940186516114354.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "a6aff61a46e0de308a35ac2f766825a167528e5f382d906049b1489c1b935293",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.49425505473402902245619940186516114354.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.49604258720899643197479618944364591761.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "c070227bac0e02e5e5c5985c1d514cee705be347e1a656986d37fd52a4914576",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.49604258720899643197479618944364591761.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "27f155990f89ff74479798bbd5e18266809fed784bde21ca9bba833a2cdd6ef2",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_27f155990f89/seg_bbba1b65.dcm",
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.49604258720899643197479618944364591761.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.501240010900924967217492511729930797193.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "21dbe4d773b6f3579e57ed73e652ba396d046ced38ef3fb30b0a3e0210beb7d6",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.501240010900924967217492511729930797193.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "8f76015fdd25bb779bfbb68b77809d0f2a776d23ad038a06af56898e1a7a6eaf",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.501240010900924967217492511729930797193.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.504680260520927420915924725519075646382.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "162083e8541d6973e7641c7dd8030e14b22992e6c826aca3d7c63518395d4caf",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.504680260520927420915924725519075646382.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "dd30bd46ce830303e73e839e5da30badc553cc8978572edf5509028aa938e25c",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.504680260520927420915924725519075646382.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.504713253262625008763595630113452972.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "52671ec5bc5f41a29f32c6df243d1a1d3da6b789e7cd34fc22d82e8f3eb2cf6c",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_52671ec5bc5f/seg_7078b609.dcm",
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.504713253262625008763595630113452972.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "14ba555baf0a4093431da8378b74d99d2d0c897cce0a38e70463a0b14abcfcb4",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.504713253262625008763595630113452972.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.507092812975925861116611104392368949421.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "6425d4ee01ff398b969efe98db8d236b65a2fd5d4bdcd9eb916383d0d1bc3e13",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.507092812975925861116611104392368949421.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "f4d3338cca00cba4ad12b2ad1e13e85372a50bdc49803ebc61db8b208fb4b18d",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.507092812975925861116611104392368949421.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.51077261510842581686881706120392360844.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "227d42beb48bbd14fd6508ddfee227d78eaca37966bcdefbb84ddbe8e5855737",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.51077261510842581686881706120392360844.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "f29022b7b0e4c716b83c472232c9bcd3adff5427b3ac65f0e3c258b5537d57d1",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.51077261510842581686881706120392360844.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.52033568358820434542440213838658209954.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "752d379e684daed32ce5bf96d2f9999b61c5bf443d433a134747c935c919bb07",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.52033568358820434542440213838658209954.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "cce5835ad003ea51c369e07f25d81429f8f27d3ad5456ce224af5c015bb4d351",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.52033568358820434542440213838658209954.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.529895196775919498416547395627910318490.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "d104a78aa441c553e1f7a1663ff427339621fd44730a8d1ea8158997f34838c9",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.529895196775919498416547395627910318490.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "cd2e3135ee256580cf73d6720093b2ea509045d24d5b17ce78fa9b13270af4d1",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.529895196775919498416547395627910318490.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.53072650337294152187781030760782669745.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "a8cd7835fd3a93e83c0eee48afd716e6f77a4ba2b17917c4cdb755a9c2dc772e",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_a8cd7835fd3a/seg_8f31cc67.dcm",
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.53072650337294152187781030760782669745.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "110dfa319ad331bab3a873b3ed00c60de96e5b219258db7b846e954bd863d4cd",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.53072650337294152187781030760782669745.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.54677216133319905156505515297034475687.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "9e31b194cf73e5ffc6b04f3d61408bc1ce1e013af14a61ba915a22ec84da50dd",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.54677216133319905156505515297034475687.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "a39100d5615d458e57a82ce745f5c9da63157db6be4790e56ec32c8d09b926cc",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.54677216133319905156505515297034475687.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.556655231008905812016793217026867415460.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "a4ebde998d2a567e5953c85a2b637807c9b0fb63725e0a9d165c00ed07dd1f98",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.556655231008905812016793217026867415460.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "26e0ada4c563131c3b9572d329f5b0d75ef49a50f1fb0dab3f22b796be755ace",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_26e0ada4c563/seg_f2daca45.dcm",
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.556655231008905812016793217026867415460.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.5634491856313149271795548440075457170.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "26fb92d425daaf86b42d2cf8a583b8b27b79d84a414ccfc12652a06d0ef5217e",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.5634491856313149271795548440075457170.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "2b0eeac4d55ac319e5d6dc9289b49b88a4d8479b361e32eef754f1e768c619bf",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.5634491856313149271795548440075457170.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.564450496057936124114845395802853573002.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "b1e1bf344e767a416d02b79275f3ee53c5bb4e88a5d29a9071d514aa4c2a3dc8",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_b1e1bf344e76/seg_3d337a34.dcm",
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.564450496057936124114845395802853573002.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "9f41c9a7bb877f692d2c88128c0d50ddb67c7b6708e9066f1e5f3a84742d0327",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.564450496057936124114845395802853573002.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.57592810476301867409549686907315791517.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "89eacdfebe7d76ef624813f08adf8890e486028e5ca63fbb06a22fa179485a27",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_89eacdfebe7d/seg_ee905755.dcm",
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.57592810476301867409549686907315791517.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "2580402ff7a3b2da1cd7eb3dedf53e2143a984229784c9fbdaf67775f8cd5082",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "MR.1.2.246.352.221.57592810476301867409549686907315791517.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:hamshkhawar/dicom_mr",
+    "name": "hamshkhawar_mr_01.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "712a061b4704e88dab54bd9abad85f9524c6c77e00cf972056f3efb0a66dc3be",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_01.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "4296cb0012f2dbd81e67f6d37eef16929d8a186fa9b623b3f1b7311d2bfbe13c",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_01.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:hamshkhawar/dicom_mr",
+    "name": "hamshkhawar_mr_02.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "3eaf9df893b086e48f50835e080caf48cb82b370277b5a585dc1f597dea6b0db",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_02.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "ea4725ed4b542593c2965d6728521100852f3e35abed8cb89147d620b660a384",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_ea4725ed4b54/seg_95f90397.dcm",
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_02.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:hamshkhawar/dicom_mr",
+    "name": "hamshkhawar_mr_03.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "d6fd9530be917394a280791ece4df907de247b20ac36a511ea4e40aa662ad7f5",
+        "action": "refine",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_d6fd9530be91/seg_90497167.dcm",
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_03.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "94ec1f0f52438c408a1e28d8d73d5fbfac652897fb43f569baf54acbe3933226",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_03.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:hamshkhawar/dicom_mr",
+    "name": "hamshkhawar_mr_04.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "64d9785c9286d00a20ed9a8c889909a6adac5cbc1c7edf8512893c50131cfd90",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_04.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "1950ecc97fc8b611e6378ec2665cc3d2c6dd20cb729366043b0c950fcddff6c8",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_04.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:hamshkhawar/dicom_mr",
+    "name": "hamshkhawar_mr_05.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "f6ad6fc1fac91f20323ca9af9d8366fab66c8774433ddecd40c66d2410c3046d",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_05.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "d7928b0229b4a34a9696e234133af68c82702fdb8ac2710a110d2d0d36fe0f8d",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_05.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:hamshkhawar/dicom_mr",
+    "name": "hamshkhawar_mr_06.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "3037184e56b002910b82d167f914f5df030176917276777598e8b83069bc88ba",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_06.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "8ebb144280d873ccda717ade77549adc67117e40e93cb5f81a88d371d4634cd8",
+        "action": "accept",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_06.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:hamshkhawar/dicom_mr",
+    "name": "hamshkhawar_mr_07.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "71d05c09f6b1d71d6b6230591409ca5e747ff98f20781b2e1fb8946f686f9980",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_07.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "5874429d8199b856893925c9d65e8d8fc67b048678ad439e1a12e4dd9b3d1f99",
+        "action": "reject",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_07.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:hamshkhawar/dicom_mr",
+    "name": "hamshkhawar_mr_08.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "b69ab042693f308a9edad7174658a2cbe6c2ea02db31ee233140b77141bcb37b",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_08.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "b19ba29aace957dba7395a3e1b45dfe5a6b47a79572f08949fb6946077f93c8c",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": true,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_b19ba29aace9/seg_7a5bdf60.dcm",
+        "invariant_holds": true,
+        "seed": "hamshkhawar_mr_08.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:SR219/dicom-read",
+    "name": "sr219_dwi_im01.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "e832555bfe1a85d1ae578e40465f462d",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "84257547ecc96e41896b1641cfba9645412bc0683401341f9a2a621376e9b0b5",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im01.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "378fa6e4c2f4b592545e1b02342113b50cf8a8d2fdd96c2203337a41f4507f2a",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": false,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_378fa6e4c2f4/mask.npy",
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im01.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:SR219/dicom-read",
+    "name": "sr219_dwi_im02.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "e832555bfe1a85d1ae578e40465f462d",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "4799d1527fdebcfe4537e40c9ce6fe2e61f772bc07cdf06702c2891d8c9e5423",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im02.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "548e8c2804aa417079047a845f4f64038edd051430ccd3e458a13e812f0cf6fc",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im02.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:SR219/dicom-read",
+    "name": "sr219_dwi_im03.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "e832555bfe1a85d1ae578e40465f462d",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "3309a8b574f44c31a8ae4934a4b3add9a4e467448aaa43524ac95124b346444f",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im03.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "cc08a4c902731a07dcb22a7caaac7e6a99542e943077f80e556324e451361666",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im03.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:SR219/dicom-read",
+    "name": "sr219_dwi_im04.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "e832555bfe1a85d1ae578e40465f462d",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "37703c3f04e220d03c21cccec7568c30310b724e9785a0440c3ecbeaf08b16e5",
+        "action": "accept",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "accepted",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im04.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "af3aa864374360b6fa8d6197b9d411cf5a9dfad9e63eec4302122ef1d4f02acc",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im04.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:SR219/dicom-read",
+    "name": "sr219_dwi_im05.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "e832555bfe1a85d1ae578e40465f462d",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "89852ec6aa1e2ac1a90629095431a020876c022810fec54fd7c1f96fcc19b4cf",
+        "action": "noop",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im05.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "1485f724b52ea96628c00583c63767d72dbb493c4ec9d2bca60a52042418bc38",
+        "action": "noop",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": true,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im05.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:SR219/dicom-read",
+    "name": "sr219_dwi_im06.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "e832555bfe1a85d1ae578e40465f462d",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "state_machine": [
+      {
+        "finding_id": "43479da9c7edd846549b186e3d950c45c747fff55b07e52054d8e7dc55f27ee2",
+        "action": "reject",
+        "ai_geometry_before": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_geometry_after": {
+          "kind": "bbox",
+          "x": 0.45,
+          "y": 0.4,
+          "w": 0.15,
+          "h": 0.18
+        },
+        "ai_status_after": "rejected",
+        "ai_is_current_after": false,
+        "v2_created": false,
+        "seg_written": false,
+        "seg_is_real": null,
+        "seg_path": null,
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im06.dcm:Suspected glioma (mock):0"
+      },
+      {
+        "finding_id": "6d03587c8a25b1bdcd3bc6f104cecc4784fc058c1e9afc9550116d6ceb421806",
+        "action": "refine",
+        "ai_geometry_before": {},
+        "ai_geometry_after": {},
+        "ai_status_after": "proposed",
+        "ai_is_current_after": false,
+        "v2_created": true,
+        "seg_written": true,
+        "seg_is_real": false,
+        "seg_path": "/tmp/lulan-analysis/seg-validation/refine_6d03587c8a25/mask.npy",
+        "invariant_holds": true,
+        "seed": "sr219_dwi_im06.dcm:Peritumoral edema (mock):1"
+      }
+    ],
+    "error": null
+  }
+]

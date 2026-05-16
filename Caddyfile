@@ -1,0 +1,29 @@
+# Single-origin reverse proxy. Fixes CORS + mixed-content for OHIF
+# viewer, which makes WADO-RS calls relative to its own origin.
+#
+# For localhost demo: HTTP on :80.
+# For a real hostname: replace `:80` with your domain to get auto-TLS.
+
+:80 {
+	encode gzip
+
+	# API — preserve /api/v1/* path; backend routes are mounted at /api/v1
+	handle /api/* {
+		reverse_proxy backend:8000
+	}
+
+	# DICOMweb (proxied through backend so auth + audit applies)
+	handle /dicom-web/* {
+		reverse_proxy backend:8000
+	}
+
+	# Everything else → Next.js
+	handle {
+		reverse_proxy frontend:3000
+	}
+
+	log {
+		output stdout
+		format console
+	}
+}

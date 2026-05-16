@@ -1,0 +1,27 @@
+# Env
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+.next/
+.turbo/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Docker volumes / data
+data/artifacts/
+data/monai-bundles/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store

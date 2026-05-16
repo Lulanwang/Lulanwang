@@ -1,0 +1,51 @@
+[project]
+name = "lulan-backend"
+version = "0.1.0"
+description = "DICOM analysis MVP backend"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.4",
+    "sqlalchemy>=2.0",
+    "alembic>=1.13",
+    "psycopg[binary]>=3.2",
+    "bcrypt>=4.2",
+    "pyjwt>=2.9",
+    "python-multipart>=0.0.9",
+    "httpx>=0.27",
+    "pydicom>=3.0",
+    "pylibjpeg>=2.0",
+    "pylibjpeg-libjpeg>=2.1",
+    "pynetdicom>=2.0",
+    "highdicom>=0.22",
+    "numpy>=1.26",
+    "pillow>=10.4",
+]
+
+[tool.setuptools]
+packages = ["app", "seed"]
+
+[project.optional-dependencies]
+ai = [
+    "torch>=2.3",
+    "monai>=1.3",
+]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.6",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
