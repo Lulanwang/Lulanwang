@@ -19,6 +19,7 @@ dependencies = [
     "pylibjpeg>=2.0",
     "pylibjpeg-libjpeg>=2.1",
     "pynetdicom>=2.0",
+    "highdicom>=0.22",
     "numpy>=1.26",
     "pillow>=10.4",
 ]

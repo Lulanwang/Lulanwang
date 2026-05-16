@@ -29,11 +29,17 @@ class FindingOut(BaseModel):
     id: str
     label: str
     body_part: str
-    confidence: float
+    confidence: float | None
     icd10_suggestion: str | None
     model_name: str
     model_version: str
     geometry: dict | None
+    version: int
+    is_current: bool
+    source: str
+    status: str
+    parent_finding_id: str | None
+    seg_sop_instance_uid: str | None
 
 
 @router.get("/", response_model=list[StudyOut])
@@ -107,10 +113,14 @@ def get_study(
 @router.get("/{study_id}/findings", response_model=list[FindingOut])
 def list_findings(
     study_id: uuid.UUID,
+    include_history: bool = False,
     user: User = Depends(current_user),
     db: Session = Depends(get_db),
 ) -> list[FindingOut]:
-    rows = db.query(Finding).filter(Finding.study_id == study_id).all()
+    q = db.query(Finding).filter(Finding.study_id == study_id)
+    if not include_history:
+        q = q.filter(Finding.is_current == True)  # noqa: E712
+    rows = q.order_by(Finding.version.asc(), Finding.created_at.asc()).all()
     return [
         FindingOut(
             id=str(f.id),
@@ -121,6 +131,12 @@ def list_findings(
             model_name=f.model_name,
             model_version=f.model_version,
             geometry=f.geometry,
+            version=f.version,
+            is_current=f.is_current,
+            source=f.source,
+            status=f.status,
+            parent_finding_id=str(f.parent_finding_id) if f.parent_finding_id else None,
+            seg_sop_instance_uid=f.seg_sop_instance_uid,
         )
         for f in rows
     ]

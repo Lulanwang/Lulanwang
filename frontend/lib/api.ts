@@ -2,6 +2,26 @@
 
 const BASE = process.env.NEXT_PUBLIC_API_BASE || "/api/v1";
 
+export type Finding = {
+  id: string;
+  study_id?: string;
+  parent_finding_id: string | null;
+  version: number;
+  is_current: boolean;
+  source: "ai" | "radiologist";
+  status: "proposed" | "accepted" | "rejected" | "modified";
+  actor_id: string | null;
+  label: string;
+  body_part: string;
+  confidence: number | null;
+  icd10_suggestion: string | null;
+  geometry: Record<string, unknown> | null;
+  model_name: string;
+  model_version: string;
+  seg_sop_instance_uid: string | null;
+  created_at?: string;
+};
+
 function getToken(): string | null {
   if (typeof window === "undefined") return null;
   return window.localStorage.getItem("lulan_token");
@@ -65,19 +85,23 @@ export const api = {
       state: string;
       finding_count: number;
     }>(`/studies/${id}`),
-  listFindings: (id: string) =>
-    request<
-      Array<{
-        id: string;
-        label: string;
-        body_part: string;
-        confidence: number;
-        icd10_suggestion: string | null;
-        model_name: string;
-        model_version: string;
-        geometry: Record<string, unknown> | null;
-      }>
-    >(`/studies/${id}/findings`),
+  listFindings: (id: string, includeHistory = false) =>
+    request<Finding[]>(
+      `/studies/${id}/findings${includeHistory ? "?include_history=true" : ""}`
+    ),
+
+  // Versioning state machine
+  acceptFinding: (id: string, icd10_override?: string) =>
+    request<Finding>(`/findings/${id}/accept`, {
+      method: "POST",
+      body: JSON.stringify({ icd10_override: icd10_override ?? null }),
+    }),
+  rejectFinding: (id: string) =>
+    request<Finding>(`/findings/${id}/reject`, { method: "POST" }),
+  refineFinding: (id: string, body: FormData) =>
+    request<Finding>(`/findings/${id}/refine`, { method: "POST", body }),
+  findingHistory: (id: string) =>
+    request<Finding[]>(`/findings/${id}/history`),
 
   runInference: (id: string) =>
     request<{ job_id: string; status: string }>(`/studies/${id}/run-inference`, { method: "POST" }),

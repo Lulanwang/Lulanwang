@@ -1,12 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { api } from "@/lib/api";
-import { DisclaimerBadge } from "@/components/DisclaimerBadge";
+import dynamic from "next/dynamic";
+import { api, Finding } from "@/lib/api";
+import { Toolbar } from "@/components/viewer/Toolbar";
+import { FindingCard } from "@/components/viewer/FindingActions";
+import type { ToolName } from "@/lib/cornerstone-init";
+
+// Cornerstone3D depends on browser APIs (WebGL, Web Workers, WASM) so
+// it MUST be loaded client-side only.
+const CornerstoneViewer = dynamic(
+  () => import("@/components/viewer/CornerstoneViewer").then((m) => m.CornerstoneViewer),
+  { ssr: false, loading: () => <div className="text-xs text-gray-300 p-4">Loading viewer…</div> }
+);
 
 type Study = Awaited<ReturnType<typeof api.getStudy>>;
-type Finding = Awaited<ReturnType<typeof api.listFindings>>[number];
 type Report = Awaited<ReturnType<typeof api.getReport>>;
 type ICD = Awaited<ReturnType<typeof api.searchIcd10>>[number];
 
@@ -20,8 +29,11 @@ export default function StudyPage() {
   const [icdResults, setIcdResults] = useState<ICD[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [activeTool, setActiveTool] = useState<ToolName>("WindowLevel");
+  const [slice, setSlice] = useState<{ idx: number; total: number } | null>(null);
+  const [refining, setRefining] = useState<Finding | null>(null);
 
-  async function refresh() {
+  const refresh = useCallback(async () => {
     try {
       const [s, f] = await Promise.all([api.getStudy(studyId), api.listFindings(studyId)]);
       setStudy(s);
@@ -31,15 +43,14 @@ export default function StudyPage() {
       } catch {
         setReport(null);
       }
-    } catch (e: unknown) {
+    } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
     }
-  }
+  }, [studyId]);
 
   useEffect(() => {
     refresh();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [studyId]);
+  }, [refresh]);
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -52,14 +63,13 @@ export default function StudyPage() {
     setBusy(true);
     try {
       await api.runInference(studyId);
-      // Poll briefly for completion
       for (let i = 0; i < 30; i++) {
         await new Promise((r) => setTimeout(r, 500));
         const s = await api.getStudy(studyId);
-        if (s.state === "reported" || s.state === "signed" || s.state === "failed") break;
+        if (["reported", "signed", "failed"].includes(s.state)) break;
       }
       await refresh();
-    } catch (e: unknown) {
+    } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
     } finally {
       setBusy(false);
@@ -71,7 +81,43 @@ export default function StudyPage() {
     try {
       await api.signReport(studyId);
       await refresh();
-    } catch (e: unknown) {
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  function startRefine(f: Finding) {
+    setRefining(f);
+    setActiveTool("Brush");
+  }
+
+  async function saveRefinement() {
+    if (!refining) return;
+    setBusy(true);
+    try {
+      const fd = new FormData();
+      fd.set("label", `${refining.label} (refined)`);
+      fd.set(
+        "geometry",
+        JSON.stringify({
+          kind: "polygon",
+          // Real implementation would extract the brush segmentation mask
+          // from cornerstone-tools and append it as a .npy file. For this
+          // skeleton we save the geometry sketch only; the backend's SEG
+          // writer will fall back to the JSON sidecar if no mask is sent.
+          ...(refining.geometry ?? {}),
+          refined: true,
+          tool: "brush",
+        })
+      );
+      if (refining.icd10_suggestion) fd.set("icd10_suggestion", refining.icd10_suggestion);
+      await api.refineFinding(refining.id, fd);
+      setRefining(null);
+      setActiveTool("WindowLevel");
+      await refresh();
+    } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
     } finally {
       setBusy(false);
@@ -83,13 +129,45 @@ export default function StudyPage() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-      <section className="lg:col-span-2 bg-black rounded overflow-hidden" style={{ minHeight: 600 }}>
-        <div className="text-xs text-gray-300 p-2">DICOM viewer (OHIF-style placeholder)</div>
-        <iframe
-          src={`/studies/${studyId}/viewer`}
-          className="w-full"
-          style={{ height: 580, border: 0, background: "#000" }}
-        />
+      <section className="lg:col-span-2 bg-black rounded overflow-hidden flex flex-col" style={{ minHeight: 640 }}>
+        <Toolbar active={activeTool} onChange={setActiveTool} />
+        <div className="relative flex-1">
+          <CornerstoneViewer
+            studyInstanceUID={study.study_instance_uid}
+            activeTool={activeTool}
+            onSliceChange={(idx, total) => setSlice({ idx, total })}
+          />
+          {slice && (
+            <div className="absolute right-2 bottom-2 text-[10px] bg-black/60 text-white rounded px-2 py-1">
+              slice {slice.idx} / {slice.total}
+            </div>
+          )}
+          {refining && (
+            <div className="absolute left-2 top-12 right-2 bg-blue-900/80 text-white text-xs rounded px-3 py-2 flex items-center justify-between">
+              <span>
+                Refining <b>{refining.label}</b> · paint with the Brush tool, then save.
+              </span>
+              <div className="flex gap-1">
+                <button
+                  onClick={saveRefinement}
+                  disabled={busy}
+                  className="bg-emerald-600 hover:bg-emerald-700 rounded px-2 py-0.5"
+                >
+                  Save refinement
+                </button>
+                <button
+                  onClick={() => {
+                    setRefining(null);
+                    setActiveTool("WindowLevel");
+                  }}
+                  className="bg-gray-700 hover:bg-gray-600 rounded px-2 py-0.5"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
       </section>
 
       <section className="space-y-4">
@@ -120,29 +198,21 @@ export default function StudyPage() {
         </div>
 
         <div className="bg-white border rounded p-3">
-          <h3 className="font-semibold text-sm mb-2">AI findings</h3>
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="font-semibold text-sm">Findings (current)</h3>
+            <span className="text-[10px] text-gray-500">{findings.length}</span>
+          </div>
           {findings.length === 0 && (
             <div className="text-xs text-gray-500">No findings yet.</div>
           )}
-          <ul className="space-y-2">
-            {findings.map((f) => (
-              <li key={f.id} className="border-b last:border-0 pb-2">
-                <div className="text-sm">{f.label}</div>
-                <div className="mt-1 flex items-center gap-2 flex-wrap">
-                  <DisclaimerBadge
-                    modelName={f.model_name}
-                    modelVersion={f.model_version}
-                    confidence={f.confidence}
-                  />
-                  {f.icd10_suggestion && (
-                    <span className="text-[10px] bg-blue-50 text-blue-700 border border-blue-200 rounded px-2 py-0.5">
-                      ICD-10 {f.icd10_suggestion}
-                    </span>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
+          {findings.map((f) => (
+            <FindingCard
+              key={f.id}
+              finding={f}
+              onChanged={refresh}
+              onStartRefine={startRefine}
+            />
+          ))}
         </div>
 
         <div className="bg-white border rounded p-3">
@@ -153,7 +223,7 @@ export default function StudyPage() {
             onChange={(e) => setIcdQuery(e.target.value)}
             className="w-full border rounded px-2 py-1 text-sm"
           />
-          <ul className="mt-2 max-h-48 overflow-auto text-xs divide-y">
+          <ul className="mt-2 max-h-40 overflow-auto text-xs divide-y">
             {icdResults.slice(0, 20).map((c) => (
               <li key={c.code} className="py-1">
                 <span className="font-mono text-gray-900">{c.code}</span>{" "}
@@ -167,7 +237,7 @@ export default function StudyPage() {
           <div className="bg-white border rounded p-3">
             <h3 className="font-semibold text-sm mb-2">Draft report</h3>
             <pre className="whitespace-pre-wrap text-xs text-gray-800">{report.impression}</pre>
-            <div className="mt-2 flex gap-2">
+            <div className="mt-2 flex gap-2 flex-wrap">
               {report.sr_available && (
                 <a
                   href={`/api/v1/reports/${report.id}/sr`}

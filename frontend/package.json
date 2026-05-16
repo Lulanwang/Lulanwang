@@ -11,7 +11,11 @@
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next-auth": "5.0.0-beta.22"
+    "next-auth": "5.0.0-beta.22",
+    "@cornerstonejs/core": "1.86.0",
+    "@cornerstonejs/tools": "1.86.0",
+    "@cornerstonejs/dicom-image-loader": "1.86.0",
+    "dicom-parser": "1.8.21"
   },
   "devDependencies": {
     "@types/node": "22.7.5",

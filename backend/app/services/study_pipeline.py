@@ -171,6 +171,13 @@ def run_inference(db: Session, job_id: uuid.UUID) -> None:
                     geometry=f.geometry or None,
                     model_name=model.name,
                     model_version=model.version,
+                    # Versioning: AI-generated, immutable, awaiting review
+                    parent_finding_id=None,
+                    version=1,
+                    is_current=True,
+                    source="ai",
+                    status="proposed",
+                    actor_id=None,
                 )
             )
 
@@ -210,10 +217,25 @@ def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | 
     patient = db.get(Patient, study.patient_id)
     pseudonym = patient.pseudonym if patient else "unknown"
 
-    findings = db.query(FindingRow).filter(FindingRow.study_id == study.id).all()
+    # Reporting reads only "current" findings that the radiologist has
+    # not rejected. AI's initial "proposed" rows are still included so
+    # an unsigned report shows the AI's draft impressions until human
+    # review explicitly accepts/rejects them.
+    findings = (
+        db.query(FindingRow)
+        .filter(
+            FindingRow.study_id == study.id,
+            FindingRow.is_current == True,  # noqa: E712
+            FindingRow.status.in_(("proposed", "accepted", "modified")),
+        )
+        .order_by(FindingRow.version.desc(), FindingRow.created_at.asc())
+        .all()
+    )
     icd_codes = sorted({f.icd10_suggestion for f in findings if f.icd10_suggestion})
 
-    impression_lines = [f"- {f.label} (confidence={f.confidence:.2f})" for f in findings]
+    def _conf(f: FindingRow) -> str:
+        return f"confidence={f.confidence:.2f}" if f.confidence is not None else f.source
+    impression_lines = [f"- {f.label} ({_conf(f)})" for f in findings]
     if not impression_lines:
         impression_lines = ["- No AI findings produced."]
     impression = "AI-generated draft impression:\n" + "\n".join(impression_lines)

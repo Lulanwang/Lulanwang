@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.v1 import auth, audit, dicomweb_proxy, health, icd10, jobs, reports, studies, upload
+from app.api.v1 import auth, audit, dicomweb_proxy, findings, health, icd10, jobs, reports, studies, upload
 from app.core.logging import configure_logging
 from app.workers.background import recover_orphaned_jobs
 
@@ -40,6 +40,7 @@ app.include_router(studies.router, prefix=API_PREFIX)
 app.include_router(upload.router, prefix=API_PREFIX)
 app.include_router(jobs.router, prefix=API_PREFIX)
 app.include_router(reports.router, prefix=API_PREFIX)
+app.include_router(findings.router, prefix=API_PREFIX)
 app.include_router(icd10.router, prefix=API_PREFIX)
 app.include_router(audit.router, prefix=API_PREFIX)
 
