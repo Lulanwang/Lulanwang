@@ -55,6 +55,29 @@ docker compose restart backend
 Breast mammography has no clean open-weights model, so it stays on
 the `MockModel` even when real inference is enabled. See `MODEL_CARDS.md`.
 
+## Testing against external DICOM data
+
+```bash
+make analyze-external           # in docker
+# or locally:
+python -m seed.analyze_external_data --out /tmp/lulan-analysis
+```
+
+This pulls DICOMs from three sources and runs them through the
+parse → de-id → route → infer → ICD-10 chain:
+
+| Source | Files | Notes |
+| --- | ---: | --- |
+| `pydicom` (bundled) | 80 | CT/MR/CR/US/SEG/RTPLAN fixtures |
+| `pydicom/pydicom-data` (GitHub, on-demand) | 21 | Brain MR variants across 5 transfer syntaxes |
+| `UniqueData/dicom-brain-dataset` (HF) | 8 | Real anonymized brain MRI series |
+| `ndonyapour/dicom-sample-files` (HF) | 40 | Chest CT series + MR hippocampal study |
+
+Latest run: **149 files, 128 de-identified, 53 routed to a model** —
+producing brain-tumour findings (ICD-10 `C71.9`, `G93.6`) on 33 real
+brain MRs and lung-nodule findings (`C34.11`, `R91.1`) on 20 real chest
+CT slices. Report committed at `docs/analysis/external_data_report.md`.
+
 ## Compliance posture
 
 See **[COMPLIANCE.md](./COMPLIANCE.md)** for the HIPAA Security Rule

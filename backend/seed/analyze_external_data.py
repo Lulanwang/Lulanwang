@@ -40,6 +40,7 @@ from app.dicom.validators import is_accepted_sop_class, model_key_for
 from app.models.base import StudyInput
 from app.models.registry import resolve_model
 from app.services import icd10
+from seed.huggingface_datasets import fetch_all as hf_fetch_all
 
 log = logging.getLogger("analyze-external")
 
@@ -285,6 +286,7 @@ def main() -> int:
     ap.add_argument("--out", default="/tmp/lulan-analysis", help="output directory")
     ap.add_argument("--limit-pydicom", type=int, default=80, help="cap on pydicom samples")
     ap.add_argument("--skip-github", action="store_true", help="don't try GitHub downloads")
+    ap.add_argument("--skip-hf", action="store_true", help="don't fetch Hugging Face datasets")
     args = ap.parse_args()
 
     out = Path(args.out)
@@ -314,6 +316,17 @@ def main() -> int:
                 results.append(FileResult(source="pydicom-data (github)", name=name, error="not found"))
                 continue
             results.append(_analyze(Path(path), source="pydicom-data (github)"))
+
+    # 3) Hugging Face datasets — real anonymized brain MR + chest CT + MR
+    #    hippocampal studies. Cached so re-runs are fast.
+    if not args.skip_hf:
+        try:
+            hf_files = hf_fetch_all(cache)
+            log.info("hugging face: %d DICOMs available", len(hf_files))
+            for path, src in hf_files:
+                results.append(_analyze(path, source=f"hf:{src.repo}"))
+        except Exception:  # noqa: BLE001
+            log.exception("hugging face fetch failed")
 
     # Write JSON
     (out / "analysis.json").write_text(json.dumps([asdict(r) for r in results], indent=2))

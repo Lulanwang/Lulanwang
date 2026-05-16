@@ -1886,5 +1886,1541 @@
     "findings": [],
     "icd10_codes": [],
     "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im1.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im2.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im3.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im4.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im5.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im6.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im7.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:UniqueData/dicom-brain-dataset",
+    "name": "brain_se2_im8.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54dddc4c2cfdad545e92f3d08e8c8f15",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0001.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0002.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0003.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0004.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0005.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0006.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0007.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0010.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0011.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0012.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0013.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0014.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0015.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0016.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0017.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0028.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0029.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0038.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0039.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "0000-0040.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.2",
+    "sop_class_accepted": true,
+    "modality": "CT",
+    "body_part": "CHEST",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "afda256d73311b2ca421f67685b43024",
+    "model_key": "lung_ct",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Solitary pulmonary nodule, 9 mm (mock)",
+        "confidence": 0.51,
+        "icd10": "R91.1"
+      },
+      {
+        "label": "Suspicious right upper lobe lesion (mock)",
+        "confidence": 0.34,
+        "icd10": "C34.11"
+      }
+    ],
+    "icd10_codes": [
+      "C34.11",
+      "R91.1"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.46610297499567687196592583109429057944.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.467164805038492957816710728990450920620.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.476773578876226308210400700478635739542.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.485338369609277286714498284938911832210.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.49344270271225281836435642048299515802.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.49425505473402902245619940186516114354.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.49604258720899643197479618944364591761.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.501240010900924967217492511729930797193.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.504680260520927420915924725519075646382.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.504713253262625008763595630113452972.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.507092812975925861116611104392368949421.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.51077261510842581686881706120392360844.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.52033568358820434542440213838658209954.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.529895196775919498416547395627910318490.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.53072650337294152187781030760782669745.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.54677216133319905156505515297034475687.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.556655231008905812016793217026867415460.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.5634491856313149271795548440075457170.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.564450496057936124114845395802853573002.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
+  },
+  {
+    "source": "hf:ndonyapour/dicom-sample-files",
+    "name": "MR.1.2.246.352.221.57592810476301867409549686907315791517.dcm",
+    "sop_class_uid": "1.2.840.10008.5.1.4.1.1.4",
+    "sop_class_accepted": true,
+    "modality": "MR",
+    "body_part": "BRAIN",
+    "body_part_inferred": false,
+    "deid_ok": true,
+    "deid_blocked_reason": null,
+    "pseudonym": "54c7191c3f7331e313d8103451a36764",
+    "model_key": "brain_mri",
+    "model_name": "MockModel",
+    "finding_count": 2,
+    "findings": [
+      {
+        "label": "Suspected glioma (mock)",
+        "confidence": 0.42,
+        "icd10": "C71.9"
+      },
+      {
+        "label": "Peritumoral edema (mock)",
+        "confidence": 0.39,
+        "icd10": "G93.6"
+      }
+    ],
+    "icd10_codes": [
+      "C71.9",
+      "G93.6"
+    ],
+    "error": null
   }
 ]
