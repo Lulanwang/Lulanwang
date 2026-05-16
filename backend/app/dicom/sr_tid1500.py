@@ -150,8 +150,8 @@ def build_sr(
         )
 
     ds.ContentSequence = Sequence(content)
-    ds.is_little_endian = True
-    ds.is_implicit_VR = False
+    # TransferSyntaxUID on file_meta determines encoding; no need to set
+    # the deprecated is_little_endian / is_implicit_VR attributes.
     return ds
 
 

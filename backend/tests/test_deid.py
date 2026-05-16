@@ -26,7 +26,7 @@ def test_basic_profile_tags_removed():
     assert result.ok
     assert result.pseudonym
     # PatientName replaced
-    assert ds.PatientName.original_string.startswith("ANON^")
+    assert str(ds.PatientName).startswith("ANON^")
     # PatientID replaced with pseudonym (hash, not original)
     assert str(ds.PatientID) == result.pseudonym
     # Every Basic Profile tag we listed must be gone

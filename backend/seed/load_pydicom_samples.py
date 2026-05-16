@@ -1,4 +1,4 @@
-"""Seed the system with demo users + a few studies from pydicom samples.
+"""Seed the system with demo users + synthetic + bundled DICOM studies.
 
 Run:  docker compose exec backend python -m seed.load_pydicom_samples
 """
@@ -16,6 +16,7 @@ from app.core.security import hash_password
 from app.db.models.user import User
 from app.db.session import SessionLocal
 from app.services.study_pipeline import enqueue_inference, ingest_datasets, run_inference
+from seed.synthetic_dicom import generate_demo_studies
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("seed")
@@ -53,16 +54,39 @@ def _override_body_part(ds, modality: str, body_part: str) -> None:
     ds.BodyPartExamined = body_part
 
 
-async def ingest_demo_studies() -> None:
-    """Pydicom ships small sample files; we re-tag them so each routes to a
-    different model and the worklist shows all three cancer types."""
-    # Only use samples known to ship with pydicom across versions.
-    # No open mammography sample is bundled, so we re-tag CT_small.dcm
-    # as MG/BREAST purely to exercise the routing + pipeline end-to-end.
+async def ingest_synthetic_studies() -> None:
+    """Generate multi-slice CT/MR + a mammogram with realistic-ish pixels
+    and lesions, then push them through the full pipeline."""
+    for synth in generate_demo_studies():
+        with SessionLocal() as db:
+            try:
+                study = await ingest_datasets(
+                    db,
+                    list(synth.datasets),
+                    actor_id=None,
+                    actor_role="system",
+                    request_id="seed-synthetic",
+                )
+                job = enqueue_inference(db, study)
+                run_inference(db, job.id)
+                log.info(
+                    "seeded synthetic %s/%s with %d instances (study=%s)",
+                    synth.modality,
+                    synth.body_part,
+                    len(synth.datasets),
+                    study.id,
+                )
+            except Exception:
+                log.exception("failed to seed synthetic %s/%s", synth.modality, synth.body_part)
+
+
+async def ingest_pydicom_samples() -> None:
+    """Also ingest pydicom's tiny bundled CT/MR samples as additional rows
+    in the worklist (handy for comparing 'real but unannotated' vs 'synthetic
+    with visible lesion')."""
     samples: list[tuple[str, str, str]] = [
         ("MR_small.dcm", "MR", "BRAIN"),
         ("CT_small.dcm", "CT", "CHEST"),
-        ("CT_small.dcm", "MG", "BREAST"),
     ]
 
     for name, mod, bp in samples:
@@ -94,9 +118,14 @@ async def ingest_demo_studies() -> None:
                 log.exception("failed to seed sample %s", name)
 
 
+async def _seed_all() -> None:
+    await ingest_synthetic_studies()
+    await ingest_pydicom_samples()
+
+
 def main() -> int:
     ensure_users()
-    asyncio.run(ingest_demo_studies())
+    asyncio.run(_seed_all())
     print(
         "\nSeed complete. Login as:\n"
         f"  admin     {settings.seed_admin_email} / {settings.seed_admin_password}\n"

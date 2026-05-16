@@ -18,6 +18,11 @@ seed:
 seed-models:
 	docker compose exec backend python -m seed.download_monai_bundles
 
+# Dump synthetic DICOMs to /data/artifacts/synthetic in the backend container
+# so you can download + open them in any DICOM viewer.
+generate-synthetic:
+	docker compose exec backend python -m seed.dump_synthetic /data/artifacts/synthetic
+
 test:
 	docker compose exec backend pytest -q
 

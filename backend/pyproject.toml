@@ -23,6 +23,9 @@ dependencies = [
     "pillow>=10.4",
 ]
 
+[tool.setuptools]
+packages = ["app", "seed"]
+
 [project.optional-dependencies]
 ai = [
     "torch>=2.3",
