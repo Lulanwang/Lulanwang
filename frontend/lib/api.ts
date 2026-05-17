@@ -104,6 +104,7 @@ export const api = {
         description: string;
         state: string;
         finding_count: number;
+        patient_pseudonym: string | null;
       }>
     >(`/studies/${query ? `?${query}` : ""}`);
   },
@@ -122,6 +123,7 @@ export const api = {
       description: string;
       state: string;
       finding_count: number;
+      patient_pseudonym: string | null;
     }>(`/studies/${id}`),
   listFindings: (id: string, includeHistory = false) =>
     request<Finding[]>(
@@ -152,6 +154,43 @@ export const api = {
     request<
       Array<{ code: string; description: string; category: string; body_part: string }>
     >(`/icd10/search?q=${encodeURIComponent(q)}`),
+
+  listPatients: () =>
+    request<
+      Array<{
+        pseudonym: string;
+        study_count: number;
+        first_study_at: string | null;
+        last_study_at: string | null;
+      }>
+    >("/patients/"),
+  patientStudies: (pseudonym: string) =>
+    request<
+      Array<{
+        id: string;
+        study_instance_uid: string;
+        modality: string;
+        body_part: string;
+        description: string;
+        state: string;
+        study_date: string | null;
+        finding_count: number;
+      }>
+    >(`/patients/${encodeURIComponent(pseudonym)}/studies`),
+  patientChangeReport: (
+    pseudonym: string,
+    baseline_study_id: string,
+    follow_up_study_id: string
+  ) =>
+    request<{
+      text: string | null;
+      backend: string;
+      model_id: string;
+      error: string | null;
+    }>(`/patients/${encodeURIComponent(pseudonym)}/change-report`, {
+      method: "POST",
+      body: JSON.stringify({ baseline_study_id, follow_up_study_id }),
+    }),
 
   dashboardKpis: () =>
     request<{

@@ -10,6 +10,7 @@ from sqlalchemy.orm import Session
 from app.core.audit import log_event
 from app.core.security import current_user
 from app.db.models.finding import Finding
+from app.db.models.patient import Patient
 from app.db.models.study import Study
 from app.db.models.user import User
 from app.db.session import get_db
@@ -35,6 +36,7 @@ class StudyOut(BaseModel):
     description: str
     state: str
     finding_count: int
+    patient_pseudonym: str | None = None
 
 
 class FindingOut(BaseModel):
@@ -106,6 +108,16 @@ def list_studies(
     elif has_findings is False:
         rows = [r for r in rows if counts.get(r.id, 0) == 0]
 
+    patient_ids = {r.patient_id for r in rows}
+    pseudonyms: dict[uuid.UUID, str] = {}
+    if patient_ids:
+        for pid, pseu in (
+            db.query(Patient.id, Patient.pseudonym)
+            .filter(Patient.id.in_(patient_ids))
+            .all()
+        ):
+            pseudonyms[pid] = pseu
+
     log_event(
         db,
         actor_id=user.id,
@@ -131,6 +143,7 @@ def list_studies(
             description=s.description,
             state=s.state,
             finding_count=counts.get(s.id, 0),
+            patient_pseudonym=pseudonyms.get(s.patient_id),
         )
         for s in rows
     ]
@@ -182,6 +195,7 @@ def get_study(
     if s is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "study not found")
     n = db.query(Finding).filter(Finding.study_id == s.id).count()
+    patient = db.get(Patient, s.patient_id)
     log_event(
         db,
         actor_id=user.id,
@@ -199,6 +213,7 @@ def get_study(
         description=s.description,
         state=s.state,
         finding_count=n,
+        patient_pseudonym=patient.pseudonym if patient else None,
     )
 
 

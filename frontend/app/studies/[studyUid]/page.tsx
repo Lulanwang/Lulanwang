@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import {
@@ -8,7 +8,9 @@ import {
   Download,
   FileJson,
   FileText,
+  History,
   Inbox,
+  Keyboard,
   Loader2,
   PlayCircle,
   Save,
@@ -32,6 +34,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Toolbar } from "@/components/viewer/Toolbar";
 import { FindingCard } from "@/components/viewer/FindingActions";
 import type { ToolName } from "@/lib/cornerstone-init";
+import { PriorsPicker } from "@/components/study/PriorsPicker";
+import { KeyboardShortcuts } from "@/components/study/KeyboardShortcuts";
+import { cn } from "@/lib/cn";
 
 const CornerstoneViewer = dynamic(
   () =>
@@ -66,6 +71,11 @@ export default function StudyPage() {
     null
   );
   const [refining, setRefining] = useState<Finding | null>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [priorsOpen, setPriorsOpen] = useState(false);
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [compareStudyId, setCompareStudyId] = useState<string | null>(null);
+  const [compareStudy, setCompareStudy] = useState<Study | null>(null);
 
   const refresh = useCallback(async () => {
     try {
@@ -142,6 +152,86 @@ export default function StudyPage() {
     setActiveTool("Brush");
   }
 
+  async function acceptCurrent() {
+    const f = findings[activeIdx];
+    if (!f || f.status !== "proposed") return;
+    try {
+      await api.acceptFinding(f.id);
+      toast.success("Accepted", { description: f.label });
+      refresh();
+    } catch (e) {
+      toast.error("Accept failed", {
+        description: e instanceof Error ? e.message : String(e),
+      });
+    }
+  }
+
+  async function rejectCurrent() {
+    const f = findings[activeIdx];
+    if (!f || f.status !== "proposed") return;
+    try {
+      await api.rejectFinding(f.id);
+      toast.success("Rejected", { description: f.label });
+      refresh();
+    } catch (e) {
+      toast.error("Reject failed", {
+        description: e instanceof Error ? e.message : String(e),
+      });
+    }
+  }
+
+  // Global keyboard shortcuts. Skip when typing in an input/textarea.
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      const tgt = e.target as HTMLElement | null;
+      const tag = tgt?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tgt?.isContentEditable)
+        return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      switch (e.key) {
+        case "j":
+          setActiveIdx((i) => Math.min(i + 1, Math.max(findings.length - 1, 0)));
+          break;
+        case "k":
+          setActiveIdx((i) => Math.max(i - 1, 0));
+          break;
+        case "a":
+          acceptCurrent();
+          break;
+        case "r":
+          rejectCurrent();
+          break;
+        case "e":
+          if (findings[activeIdx]) startRefine(findings[activeIdx]);
+          break;
+        case "s":
+          if (report) sign();
+          break;
+        case "p":
+          if (study?.patient_pseudonym) setPriorsOpen(true);
+          break;
+        case "?":
+          setShortcutsOpen((v) => !v);
+          break;
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [findings, activeIdx, report, study]);
+
+  // When user picks a prior, load it for side-by-side viewing
+  useEffect(() => {
+    if (!compareStudyId) {
+      setCompareStudy(null);
+      return;
+    }
+    api
+      .getStudy(compareStudyId)
+      .then(setCompareStudy)
+      .catch(() => setCompareStudy(null));
+  }, [compareStudyId]);
+
   async function saveRefinement() {
     if (!refining) return;
     setBusy(true);
@@ -192,15 +282,50 @@ export default function StudyPage() {
 
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_380px]">
-      <section className="flex min-h-[560px] flex-col overflow-hidden rounded-lg border border-zinc-800 bg-black">
+      <section
+        className={cn(
+          "flex min-h-[560px] flex-col overflow-hidden rounded-lg border border-zinc-800 bg-black",
+          compareStudy && "min-h-[640px]"
+        )}
+      >
         <Toolbar active={activeTool} onChange={setActiveTool} />
-        <div className="relative flex-1">
-          <CornerstoneViewer
-            studyInstanceUID={study.study_instance_uid}
-            activeTool={activeTool}
-            onSliceChange={(idx, total) => setSlice({ idx, total })}
-          />
-          {slice && (
+        <div
+          className={cn(
+            "relative flex-1",
+            compareStudy && "grid grid-cols-2 gap-px bg-zinc-800"
+          )}
+        >
+          <div className="relative">
+            {compareStudy && (
+              <div className="absolute left-2 top-2 z-10 rounded bg-black/60 px-2 py-0.5 text-[10px] uppercase tracking-wide text-white">
+                Current
+              </div>
+            )}
+            <CornerstoneViewer
+              studyInstanceUID={study.study_instance_uid}
+              activeTool={activeTool}
+              onSliceChange={(idx, total) => setSlice({ idx, total })}
+            />
+          </div>
+          {compareStudy && (
+            <div className="relative">
+              <div className="absolute left-2 top-2 z-10 rounded bg-primary/80 px-2 py-0.5 text-[10px] uppercase tracking-wide text-white">
+                Prior · {compareStudy.modality} · {compareStudy.body_part}
+              </div>
+              <button
+                onClick={() => setCompareStudyId(null)}
+                className="absolute right-2 top-2 z-10 rounded bg-black/60 px-2 py-0.5 text-[10px] text-white hover:bg-black/80"
+              >
+                Close
+              </button>
+              <CornerstoneViewer
+                studyInstanceUID={compareStudy.study_instance_uid}
+                activeTool={activeTool}
+                onSliceChange={() => {}}
+              />
+            </div>
+          )}
+          {slice && !compareStudy && (
             <div className="absolute bottom-2 right-2 rounded bg-black/60 px-2 py-1 text-[10px] text-white">
               slice {slice.idx} / {slice.total}
             </div>
@@ -279,6 +404,29 @@ export default function StudyPage() {
               <CheckCircle2 />
               Sign report
             </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => setPriorsOpen(true)}
+              disabled={!study.patient_pseudonym}
+              title={
+                !study.patient_pseudonym
+                  ? "Patient pseudonym unknown"
+                  : "Compare prior studies (P)"
+              }
+            >
+              <History />
+              Priors
+            </Button>
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() => setShortcutsOpen(true)}
+              title="Keyboard shortcuts (?)"
+            >
+              <Keyboard />
+              Keys
+            </Button>
           </CardContent>
         </Card>
 
@@ -298,13 +446,21 @@ export default function StudyPage() {
                 className="border-0 bg-transparent p-0 text-left"
               />
             ) : (
-              findings.map((f) => (
-                <FindingCard
+              findings.map((f, i) => (
+                <div
                   key={f.id}
-                  finding={f}
-                  onChanged={refresh}
-                  onStartRefine={startRefine}
-                />
+                  onClick={() => setActiveIdx(i)}
+                  className={cn(
+                    "cursor-pointer rounded-md px-2 transition-colors",
+                    i === activeIdx && "bg-primary/10 ring-1 ring-primary/30"
+                  )}
+                >
+                  <FindingCard
+                    finding={f}
+                    onChanged={refresh}
+                    onStartRefine={startRefine}
+                  />
+                </div>
               ))
             )}
           </CardContent>
@@ -423,6 +579,19 @@ export default function StudyPage() {
           </Card>
         )}
       </aside>
+
+      <PriorsPicker
+        open={priorsOpen}
+        onOpenChange={setPriorsOpen}
+        pseudonym={study.patient_pseudonym ?? null}
+        currentStudyId={studyId}
+        onSelect={(id) => {
+          setCompareStudyId(id);
+          setPriorsOpen(false);
+          toast.info("Prior loaded for side-by-side comparison");
+        }}
+      />
+      <KeyboardShortcuts open={shortcutsOpen} onOpenChange={setShortcutsOpen} />
     </div>
   );
 }

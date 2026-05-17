@@ -43,6 +43,15 @@ PROMPT_SYSTEM = (
 
 DEFAULT_HF_PATH = "/v1/chat/completions"
 
+PROMPT_COMPARE_SYSTEM = (
+    "You are a radiology AI assistant generating a CHANGE REPORT between "
+    "two imaging studies. Output for RESEARCH ONLY — NOT for diagnosis or "
+    "treatment. Compare the AI findings between the two timepoints. State "
+    "what is new, what has resolved, and what appears stable. Do not "
+    "invent findings not present in either list. Do not provide treatment "
+    "recommendations. Keep the report concise (3–6 sentences)."
+)
+
 
 @dataclass
 class NarrativeResult:
@@ -86,6 +95,28 @@ def _build_user_message(study: Study, findings: list[FindingRow]) -> str:
 
 def _build_prompt(study: Study, findings: list[FindingRow]) -> str:
     return f"{PROMPT_SYSTEM}\n\n{_build_user_message(study, findings)}"
+
+
+def _build_compare_message(
+    baseline: Study,
+    follow_up: Study,
+    baseline_findings: list[FindingRow],
+    follow_up_findings: list[FindingRow],
+) -> str:
+    return (
+        f"BASELINE study ({baseline.study_date}):\n"
+        f"- Modality: {baseline.modality}\n"
+        f"- Body part: {baseline.body_part}\n"
+        f"- Description: {baseline.description or '(none)'}\n"
+        f"- Findings:\n{_findings_block(baseline_findings)}\n\n"
+        f"FOLLOW-UP study ({follow_up.study_date}):\n"
+        f"- Modality: {follow_up.modality}\n"
+        f"- Body part: {follow_up.body_part}\n"
+        f"- Description: {follow_up.description or '(none)'}\n"
+        f"- Findings:\n{_findings_block(follow_up_findings)}\n\n"
+        "Write the change report now. Begin with: "
+        "'AI change report (research only):'."
+    )
 
 
 class MedGemmaNarrator:
@@ -132,6 +163,87 @@ class MedGemmaNarrator:
     ) -> NarrativeResult:
         return asyncio.run(self.narrate(study=study, findings=findings))
 
+    async def compare_studies(
+        self,
+        *,
+        baseline: Study,
+        follow_up: Study,
+        baseline_findings: list[FindingRow],
+        follow_up_findings: list[FindingRow],
+    ) -> NarrativeResult:
+        """Generate a free-text change report between two timepoints."""
+        user_msg = _build_compare_message(
+            baseline, follow_up, baseline_findings, follow_up_findings
+        )
+        token_estimate = max(1, (len(PROMPT_COMPARE_SYSTEM) + len(user_msg)) // 4)
+        if self.backend == "mock":
+            return self._mock_compare(
+                baseline, follow_up, baseline_findings, follow_up_findings, token_estimate
+            )
+        if self.backend == "hf":
+            return await self._hf(
+                user_msg, token_estimate, system=PROMPT_COMPARE_SYSTEM
+            )
+        return NarrativeResult(
+            text=None,
+            backend=self.backend,
+            model_id=self.model_id,
+            prompt_token_estimate=token_estimate,
+            error=f"unknown backend: {self.backend}",
+        )
+
+    def compare_studies_sync(
+        self,
+        *,
+        baseline: Study,
+        follow_up: Study,
+        baseline_findings: list[FindingRow],
+        follow_up_findings: list[FindingRow],
+    ) -> NarrativeResult:
+        return asyncio.run(
+            self.compare_studies(
+                baseline=baseline,
+                follow_up=follow_up,
+                baseline_findings=baseline_findings,
+                follow_up_findings=follow_up_findings,
+            )
+        )
+
+    def _mock_compare(
+        self,
+        baseline: Study,
+        follow_up: Study,
+        baseline_findings: list[FindingRow],
+        follow_up_findings: list[FindingRow],
+        token_estimate: int,
+    ) -> NarrativeResult:
+        baseline_labels = {f.label for f in baseline_findings}
+        follow_labels = {f.label for f in follow_up_findings}
+        new = follow_labels - baseline_labels
+        resolved = baseline_labels - follow_labels
+        stable = baseline_labels & follow_labels
+        parts = []
+        if new:
+            parts.append(f"New: {', '.join(sorted(new))}.")
+        if resolved:
+            parts.append(f"Resolved: {', '.join(sorted(resolved))}.")
+        if stable:
+            parts.append(f"Stable: {', '.join(sorted(stable))}.")
+        if not parts:
+            parts.append("No AI findings on either timepoint.")
+        text = (
+            f"AI change report (research only): Comparing {baseline.modality} "
+            f"{baseline.body_part} on {baseline.study_date} vs. "
+            f"{follow_up.modality} {follow_up.body_part} on "
+            f"{follow_up.study_date}. " + " ".join(parts) + f"\n\n{RESEARCH_DISCLAIMER}"
+        )
+        return NarrativeResult(
+            text=text,
+            backend="mock",
+            model_id=self.model_id,
+            prompt_token_estimate=token_estimate,
+        )
+
     def _mock(
         self,
         study: Study,
@@ -177,7 +289,13 @@ class MedGemmaNarrator:
             prompt_token_estimate=token_estimate,
         )
 
-    async def _hf(self, user_msg: str, token_estimate: int) -> NarrativeResult:
+    async def _hf(
+        self,
+        user_msg: str,
+        token_estimate: int,
+        *,
+        system: str = PROMPT_SYSTEM,
+    ) -> NarrativeResult:
         if not self.hf_endpoint_url:
             return NarrativeResult(
                 text=None,
@@ -197,7 +315,7 @@ class MedGemmaNarrator:
         body: dict[str, Any] = {
             "model": self.model_id,
             "messages": [
-                {"role": "system", "content": PROMPT_SYSTEM},
+                {"role": "system", "content": system},
                 {"role": "user", "content": user_msg},
             ],
             "max_tokens": self.max_new_tokens,
