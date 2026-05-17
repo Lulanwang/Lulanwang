@@ -219,6 +219,26 @@ export const api = {
         resource_id: string | null;
       }>
     >(`/dashboard/recent-activity?limit=${limit}`),
+  analyticsAcceptRate: (group_by: "model" | "body_part" = "model") =>
+    request<
+      Array<{
+        group: string;
+        accepted: number;
+        rejected: number;
+        modified: number;
+        proposed: number;
+        total: number;
+      }>
+    >(`/analytics/accept-rate?group_by=${group_by}`),
+  analyticsJobLatency: (days = 30) =>
+    request<Array<{ date: string; mean_ms: number; count: number }>>(
+      `/analytics/job-latency?days=${days}`
+    ),
+  analyticsAuditHeatmap: (days = 90) =>
+    request<Array<{ date: string; count: number }>>(
+      `/analytics/audit-heatmap?days=${days}`
+    ),
+
   dashboardUnsigned: (limit = 5) =>
     request<
       Array<{
