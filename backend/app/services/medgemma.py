@@ -74,6 +74,9 @@ def _findings_block(findings: list[FindingRow]) -> str:
             parts.append(f"confidence={f.confidence:.2f}")
         if f.icd10_suggestion:
             parts.append(f"ICD-10={f.icd10_suggestion}")
+        rads = (f.geometry or {}).get("rads") if getattr(f, "geometry", None) else None
+        if rads:
+            parts.append(f"{rads['scheme']}={rads['code']}")
         if f.model_name:
             parts.append(f"model={f.model_name} v{f.model_version}")
         lines.append("  ".join(parts))

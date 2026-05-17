@@ -477,6 +477,7 @@ export default function StudyPage() {
                     finding={f}
                     onChanged={refresh}
                     onStartRefine={startRefine}
+                    modality={study.modality}
                   />
                 </div>
               ))

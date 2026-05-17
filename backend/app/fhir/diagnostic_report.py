@@ -57,6 +57,7 @@ def diagnostic_report(
     model_name: str,
     model_version: str,
     narrative: str | None = None,
+    rads_scores: list[dict] | None = None,
 ) -> dict[str, Any]:
     code, display = LOINC_BY_MODALITY.get(modality.upper(), ("18748-4", "Diagnostic imaging Study"))
     now = datetime.now(timezone.utc).isoformat()
@@ -107,5 +108,17 @@ def diagnostic_report(
                 ]
             }
             for c in icd10_codes
+        ]
+        + [
+            {
+                "coding": [
+                    {
+                        "system": f"urn:rads:{r['scheme']}",
+                        "code": r["code"],
+                        "display": r["descriptor"],
+                    }
+                ]
+            }
+            for r in (rads_scores or [])
         ],
     }

@@ -39,6 +39,7 @@ class SRFinding:
     icd10: str | None
     model_name: str
     model_version: str
+    rads: dict | None = None  # {scheme, code, descriptor, scored_by, scored_at}
 
 
 def _coded(value: str, scheme: str, meaning: str) -> Dataset:
@@ -149,6 +150,15 @@ def build_sr(
                 "no units",
             )
         )
+        if f.rads:
+            content.append(
+                _text_content(
+                    "121071",
+                    "DCM",
+                    "Finding",
+                    f"{f.rads['scheme']} {f.rads['code']}: {f.rads['descriptor']}",
+                )
+            )
 
     # AI free-text narrative (MedGemma). Always prefixed with the
     # research-only disclaimer so downstream viewers can't strip it.

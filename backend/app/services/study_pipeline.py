@@ -279,8 +279,14 @@ def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | 
             icd10=f.icd10_suggestion,
             model_name=f.model_name,
             model_version=f.model_version,
+            rads=(f.geometry or {}).get("rads") if f.geometry else None,
         )
         for f in findings
+    ]
+    rads_scores = [
+        (f.geometry or {}).get("rads")
+        for f in findings
+        if f.geometry and f.geometry.get("rads")
     ]
     sr = build_sr(
         study_instance_uid=study.study_instance_uid,
@@ -304,6 +310,7 @@ def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | 
         model_name=findings[0].model_name if findings else "MockModel",
         model_version=findings[0].model_version if findings else "0.0",
         narrative=narrative_text,
+        rads_scores=rads_scores,
     )
 
     report = (

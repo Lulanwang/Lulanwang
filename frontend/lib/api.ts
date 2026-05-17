@@ -140,6 +140,15 @@ export const api = {
     request<Finding>(`/findings/${id}/reject`, { method: "POST" }),
   refineFinding: (id: string, body: FormData) =>
     request<Finding>(`/findings/${id}/refine`, { method: "POST", body }),
+  setFindingRads: (id: string, scheme: string, code: string) =>
+    request<Finding>(`/findings/${id}/rads`, {
+      method: "POST",
+      body: JSON.stringify({ scheme, code }),
+    }),
+  radsSchemes: () =>
+    request<Record<string, Array<{ code: string; descriptor: string }>>>(
+      "/findings/rads/schemes"
+    ),
   findingHistory: (id: string) =>
     request<Finding[]>(`/findings/${id}/history`),
 

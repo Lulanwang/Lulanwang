@@ -13,6 +13,7 @@ import { toast } from "sonner";
 import { api, Finding } from "@/lib/api";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { RadsPicker } from "@/components/finding/RadsPicker";
 
 const STATUS_VARIANT: Record<
   string,
@@ -28,10 +29,12 @@ export function FindingCard({
   finding,
   onChanged,
   onStartRefine,
+  modality,
 }: {
   finding: Finding;
   onChanged: () => void;
   onStartRefine: (f: Finding) => void;
+  modality?: string;
 }) {
   const [busy, setBusy] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
@@ -105,6 +108,18 @@ export function FindingCard({
               >
                 DICOM SEG
               </Badge>
+            )}
+            {finding.is_current && (
+              <RadsPicker
+                findingId={finding.id}
+                modality={modality ?? ""}
+                bodyPart={finding.body_part}
+                current={
+                  (finding.geometry as { rads?: { scheme: string; code: string; descriptor: string } } | null)?.rads ??
+                  null
+                }
+                onUpdated={onChanged}
+              />
             )}
           </div>
         </div>
