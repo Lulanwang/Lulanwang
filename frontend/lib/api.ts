@@ -2,6 +2,20 @@
 
 const BASE = process.env.NEXT_PUBLIC_API_BASE || "/api/v1";
 
+export type Report = {
+  id: string;
+  study_id: string;
+  impression: string;
+  icd10_codes: string[];
+  fhir_diagnostic_report: Record<string, unknown> | null;
+  signed_at: string | null;
+  signed_by: string | null;
+  sr_available: boolean;
+  clinical_narrative: string | null;
+  narrative_model: string | null;
+  narrative_generated_at: string | null;
+};
+
 export type Finding = {
   id: string;
   study_id?: string;
@@ -108,20 +122,7 @@ export const api = {
   signReport: (id: string) =>
     request<{ report_id: string; signed_at: string }>(`/studies/${id}/sign`, { method: "POST" }),
 
-  getReport: (studyId: string) =>
-    request<{
-      id: string;
-      study_id: string;
-      impression: string;
-      icd10_codes: string[];
-      fhir_diagnostic_report: Record<string, unknown> | null;
-      signed_at: string | null;
-      signed_by: string | null;
-      sr_available: boolean;
-      clinical_narrative: string | null;
-      narrative_model: string | null;
-      narrative_generated_at: string | null;
-    }>(`/reports/study/${studyId}`),
+  getReport: (studyId: string) => request<Report>(`/reports/study/${studyId}`),
 
   searchIcd10: (q: string) =>
     request<

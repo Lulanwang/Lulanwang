@@ -1,19 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import {
+  Check,
+  History,
+  Pencil,
+  Sparkles,
+  User,
+  X,
+} from "lucide-react";
+import { toast } from "sonner";
 import { api, Finding } from "@/lib/api";
-import { DisclaimerBadge } from "@/components/DisclaimerBadge";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
-const STATUS_BADGE: Record<string, string> = {
-  proposed: "bg-amber-100 text-amber-800 border-amber-300",
-  accepted: "bg-emerald-100 text-emerald-800 border-emerald-300",
-  rejected: "bg-red-100 text-red-700 border-red-300",
-  modified: "bg-blue-100 text-blue-700 border-blue-300",
-};
-
-const SOURCE_BADGE: Record<string, string> = {
-  ai: "bg-violet-100 text-violet-700 border-violet-300",
-  radiologist: "bg-teal-100 text-teal-700 border-teal-300",
+const STATUS_VARIANT: Record<
+  string,
+  "warning" | "success" | "destructive" | "default"
+> = {
+  proposed: "warning",
+  accepted: "success",
+  rejected: "destructive",
+  modified: "default",
 };
 
 export function FindingCard({
@@ -33,7 +41,12 @@ export function FindingCard({
     setBusy(true);
     try {
       await api.acceptFinding(finding.id);
+      toast.success("Finding accepted", { description: finding.label });
       onChanged();
+    } catch (e) {
+      toast.error("Accept failed", {
+        description: e instanceof Error ? e.message : String(e),
+      });
     } finally {
       setBusy(false);
     }
@@ -42,7 +55,12 @@ export function FindingCard({
     setBusy(true);
     try {
       await api.rejectFinding(finding.id);
+      toast.success("Finding rejected", { description: finding.label });
       onChanged();
+    } catch (e) {
+      toast.error("Reject failed", {
+        description: e instanceof Error ? e.message : String(e),
+      });
     } finally {
       setBusy(false);
     }
@@ -58,111 +76,109 @@ export function FindingCard({
   }
 
   return (
-    <div className="border-b last:border-0 py-2">
+    <div className="border-b py-3 last:border-0">
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1">
-          <div className="text-sm">{finding.label}</div>
-          <div className="mt-1 flex flex-wrap gap-1 items-center">
-            <span
-              className={`text-[10px] border rounded px-1.5 py-0.5 ${SOURCE_BADGE[finding.source]}`}
-              title={`Source: ${finding.source}`}
-            >
+          <div className="text-sm font-medium">{finding.label}</div>
+          <div className="mt-1.5 flex flex-wrap items-center gap-1">
+            <Badge variant={finding.source === "ai" ? "ai" : "secondary"}>
+              {finding.source === "ai" ? <Sparkles /> : <User />}
               {finding.source} v{finding.version}
-            </span>
-            <span
-              className={`text-[10px] border rounded px-1.5 py-0.5 ${STATUS_BADGE[finding.status]}`}
-            >
+            </Badge>
+            <Badge variant={STATUS_VARIANT[finding.status] || "default"}>
               {finding.status}
-            </span>
+            </Badge>
             {finding.confidence !== null && (
-              <DisclaimerBadge
-                modelName={finding.model_name}
-                modelVersion={finding.model_version}
-                confidence={finding.confidence}
-              />
+              <Badge variant="outline">
+                {finding.model_name} · {finding.confidence.toFixed(2)}
+              </Badge>
             )}
             {finding.icd10_suggestion && (
-              <span className="text-[10px] bg-blue-50 text-blue-700 border border-blue-200 rounded px-2 py-0.5">
+              <Badge variant="default">
                 ICD-10 {finding.icd10_suggestion}
-              </span>
+              </Badge>
             )}
             {finding.seg_sop_instance_uid && (
-              <span
-                className="text-[10px] bg-gray-100 text-gray-700 border border-gray-300 rounded px-2 py-0.5"
+              <Badge
+                variant="secondary"
                 title={finding.seg_sop_instance_uid}
               >
                 DICOM SEG
-              </span>
+              </Badge>
             )}
           </div>
         </div>
       </div>
 
       {finding.status === "proposed" && finding.is_current && (
-        <div className="mt-2 flex gap-1">
-          <button
-            onClick={accept}
-            disabled={busy}
-            className="text-[11px] bg-emerald-700 hover:bg-emerald-800 text-white rounded px-2 py-0.5 disabled:opacity-50"
-          >
+        <div className="mt-3 flex gap-1">
+          <Button size="sm" variant="success" onClick={accept} disabled={busy}>
+            <Check />
             Accept
-          </button>
-          <button
+          </Button>
+          <Button
+            size="sm"
+            variant="destructive"
             onClick={reject}
             disabled={busy}
-            className="text-[11px] bg-red-700 hover:bg-red-800 text-white rounded px-2 py-0.5 disabled:opacity-50"
           >
+            <X />
             Reject
-          </button>
-          <button
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
             onClick={() => onStartRefine(finding)}
             disabled={busy}
-            className="text-[11px] bg-blue-700 hover:bg-blue-800 text-white rounded px-2 py-0.5 disabled:opacity-50"
           >
+            <Pencil />
             Refine
-          </button>
+          </Button>
         </div>
       )}
 
       {finding.status === "accepted" && finding.is_current && (
-        <div className="mt-2 flex gap-1">
-          <button
+        <div className="mt-3 flex gap-1">
+          <Button
+            size="sm"
+            variant="outline"
             onClick={() => onStartRefine(finding)}
             disabled={busy}
-            className="text-[11px] bg-blue-700 hover:bg-blue-800 text-white rounded px-2 py-0.5 disabled:opacity-50"
           >
+            <Pencil />
             Refine further
-          </button>
+          </Button>
         </div>
       )}
 
       <button
         onClick={loadHistory}
-        className="mt-2 text-[10px] text-gray-500 hover:text-gray-800 underline"
+        className="mt-2 inline-flex items-center gap-1 text-[10px] text-muted-foreground hover:text-foreground"
       >
+        <History className="h-3 w-3" />
         {showHistory ? "Hide" : "Show"} version history (preserves AI original)
       </button>
 
       {showHistory && history && (
-        <ol className="mt-2 border-l-2 border-gray-200 pl-3 space-y-1">
+        <ol className="mt-2 space-y-1 border-l-2 border-border pl-3">
           {history.map((h) => (
             <li key={h.id} className="text-[11px]">
-              <span className="font-mono text-gray-500">v{h.version}</span>{" "}
-              <span
-                className={`border rounded px-1 ${SOURCE_BADGE[h.source]} text-[10px]`}
-              >
+              <span className="font-mono text-muted-foreground">
+                v{h.version}
+              </span>{" "}
+              <Badge variant={h.source === "ai" ? "ai" : "secondary"}>
                 {h.source}
-              </span>{" "}
-              <span
-                className={`border rounded px-1 ${STATUS_BADGE[h.status]} text-[10px]`}
-              >
+              </Badge>{" "}
+              <Badge variant={STATUS_VARIANT[h.status] || "default"}>
                 {h.status}
-              </span>{" "}
-              <span className="text-gray-700">{h.label}</span>
-              <div className="text-gray-400">
-                {new Date(h.created_at).toLocaleString()}
+              </Badge>{" "}
+              <span className="text-foreground">{h.label}</span>
+              <div className="text-muted-foreground">
+                {h.created_at && new Date(h.created_at).toLocaleString()}
                 {h.actor_id ? ` · ${h.actor_id.slice(0, 8)}` : ""}
-                {h.confidence !== null ? ` · conf ${h.confidence.toFixed(2)}` : ""}
+                {h.confidence !== null
+                  ? ` · conf ${h.confidence.toFixed(2)}`
+                  : ""}
               </div>
             </li>
           ))}
