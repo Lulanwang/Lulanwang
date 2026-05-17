@@ -35,7 +35,7 @@ EXPLICIT_VR_LITTLE_ENDIAN = "1.2.840.10008.1.2.1"
 @dataclass
 class SRFinding:
     label: str
-    confidence: float
+    confidence: float | None  # None for radiologist-refined rows
     icd10: str | None
     model_name: str
     model_version: str
@@ -141,15 +141,19 @@ def build_sr(
                 + ")",
             )
         )
-        content.append(
-            _num_content(
-                "111047",
-                "Probability of malignancy",  # nearest standard concept
-                f.confidence,
-                "1",
-                "no units",
+        # Confidence is optional — radiologist-refined rows don't carry an
+        # AI confidence (set to None in Round 5). Only emit the NUM
+        # content when we have one.
+        if f.confidence is not None:
+            content.append(
+                _num_content(
+                    "111047",
+                    "Probability of malignancy",  # nearest standard concept
+                    f.confidence,
+                    "1",
+                    "no units",
+                )
             )
-        )
         if f.rads:
             content.append(
                 _text_content(

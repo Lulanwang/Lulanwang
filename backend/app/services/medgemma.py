@@ -17,12 +17,35 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
-from typing import Any, Literal
+from typing import Any, Coroutine, Literal, TypeVar
 
 import httpx
 
 from app.core.config import settings
+
+_T = TypeVar("_T")
+_BG_EXECUTOR = ThreadPoolExecutor(max_workers=2, thread_name_prefix="medgemma-sync")
+
+
+def _run_async(coro: Coroutine[Any, Any, _T]) -> _T:
+    """Run an awaitable from sync code, regardless of whether the caller is
+    inside a running event loop.
+
+    The old `asyncio.run(coro)` raised RuntimeError when called from a thread
+    already running an event loop (e.g. the seed scripts that `await
+    ingest_synthetic_studies()` → `generate_report()` → `narrate_sync()`).
+    This helper detects that case and runs the coroutine on a background
+    thread that owns its own loop.
+    """
+    try:
+        asyncio.get_running_loop()
+    except RuntimeError:
+        return asyncio.run(coro)
+    # Already inside a loop → can't nest asyncio.run; offload.
+    return _BG_EXECUTOR.submit(lambda: asyncio.run(coro)).result()
 from app.db.models.finding import Finding as FindingRow
 from app.db.models.study import Study
 
@@ -164,7 +187,7 @@ class MedGemmaNarrator:
     def narrate_sync(
         self, *, study: Study, findings: list[FindingRow]
     ) -> NarrativeResult:
-        return asyncio.run(self.narrate(study=study, findings=findings))
+        return _run_async(self.narrate(study=study, findings=findings))
 
     async def compare_studies(
         self,
@@ -203,7 +226,7 @@ class MedGemmaNarrator:
         baseline_findings: list[FindingRow],
         follow_up_findings: list[FindingRow],
     ) -> NarrativeResult:
-        return asyncio.run(
+        return _run_async(
             self.compare_studies(
                 baseline=baseline,
                 follow_up=follow_up,
