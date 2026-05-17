@@ -36,7 +36,15 @@ import { FindingCard } from "@/components/viewer/FindingActions";
 import type { ToolName } from "@/lib/cornerstone-init";
 import { PriorsPicker } from "@/components/study/PriorsPicker";
 import { KeyboardShortcuts } from "@/components/study/KeyboardShortcuts";
+import { MedGemmaChat } from "@/components/study/MedGemmaChat";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { cn } from "@/lib/cn";
+import { MessageCircle } from "lucide-react";
 
 const CornerstoneViewer = dynamic(
   () =>
@@ -76,6 +84,7 @@ export default function StudyPage() {
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const [compareStudyId, setCompareStudyId] = useState<string | null>(null);
   const [compareStudy, setCompareStudy] = useState<Study | null>(null);
+  const [chatOpen, setChatOpen] = useState(false);
 
   const refresh = useCallback(async () => {
     try {
@@ -420,6 +429,15 @@ export default function StudyPage() {
             </Button>
             <Button
               size="sm"
+              variant="outline"
+              onClick={() => setChatOpen(true)}
+              title="Ask MedGemma about this study"
+            >
+              <MessageCircle />
+              Chat
+            </Button>
+            <Button
+              size="sm"
               variant="ghost"
               onClick={() => setShortcutsOpen(true)}
               title="Keyboard shortcuts (?)"
@@ -592,6 +610,20 @@ export default function StudyPage() {
         }}
       />
       <KeyboardShortcuts open={shortcutsOpen} onOpenChange={setShortcutsOpen} />
+
+      <Sheet open={chatOpen} onOpenChange={setChatOpen}>
+        <SheetContent className="flex w-full flex-col p-0 sm:max-w-md">
+          <SheetHeader className="px-4 py-3">
+            <SheetTitle className="flex items-center gap-2 text-sm">
+              <Sparkles className="h-4 w-4 text-primary" />
+              MedGemma chat
+            </SheetTitle>
+          </SheetHeader>
+          <div className="flex-1 overflow-hidden">
+            <MedGemmaChat studyId={studyId} />
+          </div>
+        </SheetContent>
+      </Sheet>
     </div>
   );
 }
