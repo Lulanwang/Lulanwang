@@ -142,7 +142,51 @@ class Model(Protocol):
 Register it in `backend/app/models/registry.py`. The pipeline will
 route studies whose `(modality, body_part)` matches.
 
-## 7. Output disclaimers (enforced in UI)
+## 7. Synthetic dose model — `dose_synth` (NOT a TPS)
+
+This is **not** a Monte Carlo dose engine. It is an explicit illustrative
+model that lets the Round 9 treatment-planning workspace render
+isodose-like overlays and feed per-OAR dose summaries into the
+constraint evaluator. **Plans produced here cannot be delivered to a
+real linac.** This is a research / education sandbox.
+
+- **Purpose**: visualize where dose would *roughly* land for a given
+  set of beams, so the UI can demonstrate the constraint-evaluation
+  workflow against published RTOG/QUANTEC thresholds.
+- **Inputs**: list of beams (gantry/couch/collimator angle, energy, MU,
+  weight), isocenter, prescription dose, modality (proton/photon).
+- **Outputs**: 3D float dose grid (Gy) + per-OAR mean/max/V20/V30
+  summaries. Persisted in `treatment_plans.dose_summary` (JSONB).
+- **Model**: per-beam Gaussian lateral falloff (proton σ=1.5 cm,
+  photon σ=2.5 cm) × linear 3%/cm depth attenuation × beam weight,
+  linearly superposed, then normalized so isocenter sums to
+  prescription dose.
+- **License**: code is Apache-2.0; no third-party model weights.
+- **Known failure modes** — this list is exhaustive in importance:
+  - No heterogeneity correction (lung treated as water)
+  - No biological-effective-dose / fractionation modeling
+  - **No proton-specific Bragg-peak modeling** — the `proton` flag only
+    narrows the lateral Gaussian slightly. Distal falloff is wrong.
+  - No collimator / MLC modeling, no beam aperture
+  - No anatomy-aware dose voxelization — dose grid is a fixed 32³ cube
+    independent of the patient's actual geometry
+  - Normalization to prescription means adding beams can *dilute* the
+    per-beam contribution at a point even though absolute dose deposited
+    increases — the per-beam math is correct but downstream readers may
+    misinterpret superposition behavior
+- **Where dose appears**:
+  - `dose_summary.global` rendered in the DoseSummaryCard
+  - Per-OAR dose feeds `oar_constraints.evaluate()` → pass/warn/fail
+    rendered in OARManagerPanel
+- **Hard guarantee in code**: every API response that ships dose
+  carries `summary["disclaimer"]` with the RESEARCH USE ONLY notice;
+  the UI displays it inline. The synthetic disclaimer cannot be turned
+  off.
+- **Code**: `backend/app/services/dose_synth.py`
+- **OAR constraints**: `backend/app/services/oar_constraints.py`
+  (RTOG/QUANTEC values; same disclaimer applies)
+
+## 8. Output disclaimers (enforced in UI)
 
 - Every finding rendered in the UI carries a `DisclaimerBadge`:
   > "AI-generated, unverified. Model: `<name>` v`<ver>`. Confidence: `<x>`."

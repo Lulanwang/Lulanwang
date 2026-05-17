@@ -2,6 +2,56 @@
 
 const BASE = process.env.NEXT_PUBLIC_API_BASE || "/api/v1";
 
+export type TreatmentPlan = {
+  id: string;
+  study_id: string;
+  name: string;
+  intent: "curative" | "palliative";
+  modality: "proton" | "photon";
+  prescription_dose_gy: number;
+  fractions: number;
+  notes: string | null;
+  status: "draft" | "approved" | "archived";
+  beams: Beam[] | null;
+  dose_summary: DoseSummary | null;
+  signed_by: string | null;
+  signed_at: string | null;
+};
+
+export type Beam = {
+  id?: string;
+  gantry_angle: number;
+  couch_angle?: number;
+  collimator_angle?: number;
+  energy_mev?: number;
+  mu?: number;
+  weight?: number;
+};
+
+export type DoseSummary = {
+  computed_at: string;
+  modality: string;
+  prescription_dose_gy: number;
+  isocenter: number[];
+  grid_shape: number[];
+  spacing_cm: number;
+  global: { mean: number; max: number; v20: number; v30: number };
+  oars: Record<string, { mean: number; max: number; v20: number; v30: number }>;
+  disclaimer: string;
+};
+
+export type Contour = {
+  id: string;
+  study_id: string;
+  plan_id: string | null;
+  contour_type: "GTV" | "CTV" | "PTV" | "OAR";
+  name: string;
+  color: string;
+  geometry: Array<{ slice_index: number; points: number[] }> | null;
+  volume_cm3: number | null;
+  rt_sop_instance_uid?: string | null;
+};
+
 export type Report = {
   id: string;
   study_id: string;
@@ -149,6 +199,83 @@ export const api = {
     request<Record<string, Array<{ code: string; descriptor: string }>>>(
       "/findings/rads/schemes"
     ),
+
+  // ---------- treatment planning (research-only) ----------
+  listPlans: (study_id?: string) =>
+    request<TreatmentPlan[]>(
+      `/treatment-plans/${study_id ? `?study_id=${study_id}` : ""}`
+    ),
+  createPlan: (body: {
+    study_id: string;
+    name?: string;
+    intent?: "curative" | "palliative";
+    modality?: "proton" | "photon";
+    prescription_dose_gy?: number;
+    fractions?: number;
+  }) =>
+    request<TreatmentPlan>("/treatment-plans/", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+  getPlan: (id: string) => request<TreatmentPlan>(`/treatment-plans/${id}`),
+  patchPlan: (id: string, body: Partial<TreatmentPlan>) =>
+    request<TreatmentPlan>(`/treatment-plans/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify(body),
+    }),
+  approvePlan: (id: string) =>
+    request<TreatmentPlan>(`/treatment-plans/${id}/approve`, {
+      method: "POST",
+    }),
+  computeDose: (id: string) =>
+    request<TreatmentPlan>(`/treatment-plans/${id}/compute-dose`, {
+      method: "POST",
+    }),
+  listContours: (plan_id: string) =>
+    request<Contour[]>(`/treatment-plans/${plan_id}/contours`),
+  addContour: (
+    plan_id: string,
+    body: {
+      contour_type: "GTV" | "CTV" | "PTV" | "OAR";
+      name: string;
+      color?: string;
+      geometry?: Array<{ slice_index: number; points: number[] }> | null;
+      volume_cm3?: number | null;
+    }
+  ) =>
+    request<Contour>(`/treatment-plans/${plan_id}/contours`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+  deleteContour: (id: string) =>
+    request<void>(`/treatment-plans/contours/${id}`, { method: "DELETE" }),
+  oarConstraints: () =>
+    request<{
+      tissues: string[];
+      constraints: Array<{
+        tissue: string;
+        metric: string;
+        limit_gy: number;
+        severity_on_breach: "pass" | "warn" | "fail";
+        rationale: string;
+        source: string;
+      }>;
+    }>("/treatment-plans/constraints/oar"),
+  evaluateConstraint: (tissue: string, dose: Record<string, number>) =>
+    request<
+      Array<{
+        tissue: string;
+        metric: string;
+        limit_gy: number;
+        observed: number;
+        status: "pass" | "warn" | "fail";
+        rationale: string;
+        source: string;
+      }>
+    >("/treatment-plans/constraints/evaluate", {
+      method: "POST",
+      body: JSON.stringify({ tissue, dose }),
+    }),
   findingHistory: (id: string) =>
     request<Finding[]>(`/findings/${id}/history`),
 
