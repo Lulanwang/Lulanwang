@@ -1,7 +1,10 @@
 import uuid
+from datetime import date, datetime, timezone
 
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request, status
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, Request, status
+from fastapi.responses import Response
 from pydantic import BaseModel
+from sqlalchemy import asc, desc
 from sqlalchemy.orm import Session
 
 from app.core.audit import log_event
@@ -10,9 +13,18 @@ from app.db.models.finding import Finding
 from app.db.models.study import Study
 from app.db.models.user import User
 from app.db.session import get_db
+from app.services import thumbnail
 from app.services.study_pipeline import enqueue_inference, generate_report, run_inference
 
 router = APIRouter(prefix="/studies", tags=["studies"])
+
+SORTABLE = {
+    "created_at": Study.created_at,
+    "study_date": Study.study_date,
+    "modality": Study.modality,
+    "body_part": Study.body_part,
+    "state": Study.state,
+}
 
 
 class StudyOut(BaseModel):
@@ -45,18 +57,54 @@ class FindingOut(BaseModel):
 @router.get("/", response_model=list[StudyOut])
 def list_studies(
     request: Request,
+    modality: str | None = Query(None, description="Filter by modality (e.g. CT, MR, MG)"),
+    body_part: str | None = Query(None, description="Filter by body part (e.g. BRAIN, CHEST)"),
+    state: str | None = Query(None, description="Filter by lifecycle state"),
+    from_date: date | None = Query(None, alias="from"),
+    to_date: date | None = Query(None, alias="to"),
+    has_findings: bool | None = Query(
+        None, description="True = at least one current finding; False = none"
+    ),
+    sort: str = Query("created_at", description="Sort column"),
+    order: str = Query("desc", description="asc | desc"),
+    limit: int = Query(200, ge=1, le=500),
     user: User = Depends(current_user),
     db: Session = Depends(get_db),
 ) -> list[StudyOut]:
-    rows = db.query(Study).order_by(Study.created_at.desc()).limit(200).all()
-    counts = {}
+    q = db.query(Study)
+    if modality:
+        q = q.filter(Study.modality == modality.upper())
+    if body_part:
+        q = q.filter(Study.body_part == body_part.upper())
+    if state:
+        q = q.filter(Study.state == state)
+    if from_date:
+        q = q.filter(Study.study_date >= datetime.combine(from_date, datetime.min.time(), tzinfo=timezone.utc))
+    if to_date:
+        q = q.filter(Study.study_date <= datetime.combine(to_date, datetime.max.time(), tzinfo=timezone.utc))
+
+    col = SORTABLE.get(sort, Study.created_at)
+    direction = asc if order.lower() == "asc" else desc
+    q = q.order_by(direction(col)).limit(limit)
+
+    rows = q.all()
+
+    counts: dict[uuid.UUID, int] = {}
     if rows:
-        for sid, n in (
+        for sid, _ in (
             db.query(Finding.study_id, Finding.id)
-            .filter(Finding.study_id.in_([r.id for r in rows]))
+            .filter(
+                Finding.study_id.in_([r.id for r in rows]),
+                Finding.is_current == True,  # noqa: E712
+            )
             .all()
         ):
             counts[sid] = counts.get(sid, 0) + 1
+
+    if has_findings is True:
+        rows = [r for r in rows if counts.get(r.id, 0) > 0]
+    elif has_findings is False:
+        rows = [r for r in rows if counts.get(r.id, 0) == 0]
 
     log_event(
         db,
@@ -64,6 +112,15 @@ def list_studies(
         actor_role=user.role,
         action="study.list",
         request_id=request.headers.get("x-request-id"),
+        details={
+            "filters": {
+                "modality": modality,
+                "body_part": body_part,
+                "state": state,
+                "has_findings": has_findings,
+            },
+            "result_count": len(rows),
+        },
     )
     return [
         StudyOut(
@@ -77,6 +134,41 @@ def list_studies(
         )
         for s in rows
     ]
+
+
+@router.get("/facets")
+def list_facets(
+    user: User = Depends(current_user),
+    db: Session = Depends(get_db),
+) -> dict:
+    """Distinct values for the worklist filter sidebar."""
+    modalities = sorted(
+        {m for (m,) in db.query(Study.modality).distinct().all() if m}
+    )
+    body_parts = sorted(
+        {b for (b,) in db.query(Study.body_part).distinct().all() if b}
+    )
+    states = sorted({s for (s,) in db.query(Study.state).distinct().all() if s})
+    return {
+        "modalities": modalities,
+        "body_parts": body_parts,
+        "states": states,
+    }
+
+
+@router.get("/{study_id}/thumbnail")
+async def study_thumbnail(
+    study_id: uuid.UUID,
+    user: User = Depends(current_user),
+    db: Session = Depends(get_db),
+) -> Response:
+    s = db.get(Study, study_id)
+    if s is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "study not found")
+    png = await thumbnail.get_or_render(study_id, s.study_instance_uid)
+    if png is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "thumbnail unavailable")
+    return Response(content=png, media_type="image/png")
 
 
 @router.get("/{study_id}", response_model=StudyOut)

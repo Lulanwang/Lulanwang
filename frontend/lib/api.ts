@@ -77,8 +77,25 @@ export const api = {
     }),
   me: () => request<{ user_id: string; email: string; role: string; full_name: string }>("/auth/me"),
 
-  listStudies: () =>
-    request<
+  listStudies: (params?: {
+    modality?: string;
+    body_part?: string;
+    state?: string;
+    from?: string;
+    to?: string;
+    has_findings?: boolean;
+    sort?: string;
+    order?: "asc" | "desc";
+    limit?: number;
+  }) => {
+    const qs = new URLSearchParams();
+    if (params) {
+      for (const [k, v] of Object.entries(params)) {
+        if (v !== undefined && v !== null && v !== "") qs.set(k, String(v));
+      }
+    }
+    const query = qs.toString();
+    return request<
       Array<{
         id: string;
         study_instance_uid: string;
@@ -88,7 +105,14 @@ export const api = {
         state: string;
         finding_count: number;
       }>
-    >("/studies/"),
+    >(`/studies/${query ? `?${query}` : ""}`);
+  },
+  listStudyFacets: () =>
+    request<{
+      modalities: string[];
+      body_parts: string[];
+      states: string[];
+    }>("/studies/facets"),
   getStudy: (id: string) =>
     request<{
       id: string;
