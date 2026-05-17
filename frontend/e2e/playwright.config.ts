@@ -14,10 +14,13 @@ export default defineConfig({
   fullyParallel: false, // sequential — shared seeded DB rows
   workers: 1,
   retries: 0,
+  // Reporter output paths are relative to this config file. We send
+  // them up one level so they land in `frontend/test-results/` and
+  // `frontend/playwright-report/` — both gitignored.
   reporter: [
     ["list"],
-    ["json", { outputFile: "./test-results/results.json" }],
-    ["html", { outputFolder: "./playwright-report", open: "never" }],
+    ["json", { outputFile: "../test-results/results.json" }],
+    ["html", { outputFolder: "../playwright-report", open: "never" }],
   ],
   use: {
     baseURL: "http://localhost:3000",
