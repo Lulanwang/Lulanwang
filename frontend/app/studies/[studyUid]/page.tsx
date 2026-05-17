@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import {
@@ -12,11 +12,14 @@ import {
   Inbox,
   Keyboard,
   Loader2,
+  MessageCircle,
   PlayCircle,
   Save,
   Search,
   Sparkles,
+  Stethoscope,
 } from "lucide-react";
+import Link from "next/link";
 import { toast } from "sonner";
 import { api, Finding, Report } from "@/lib/api";
 import { Button } from "@/components/ui/button";
@@ -44,13 +47,11 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/cn";
-import { MessageCircle } from "lucide-react";
+import type { ViewerHandle } from "@/components/viewer/CornerstoneViewer";
+import type { Layout, ViewportSlot } from "@/components/viewer/ViewportGrid";
 
-const CornerstoneViewer = dynamic(
-  () =>
-    import("@/components/viewer/CornerstoneViewer").then(
-      (m) => m.CornerstoneViewer
-    ),
+const ViewportGrid = dynamic(
+  () => import("@/components/viewer/ViewportGrid").then((m) => m.ViewportGrid),
   {
     ssr: false,
     loading: () => (
@@ -59,6 +60,16 @@ const CornerstoneViewer = dynamic(
       </div>
     ),
   }
+);
+
+const CineControls = dynamic(
+  () => import("@/components/viewer/CineControls").then((m) => m.CineControls),
+  { ssr: false }
+);
+
+const SeriesPanel = dynamic(
+  () => import("@/components/viewer/SeriesPanel").then((m) => m.SeriesPanel),
+  { ssr: false }
 );
 
 type Study = Awaited<ReturnType<typeof api.getStudy>>;
@@ -75,16 +86,19 @@ export default function StudyPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [activeTool, setActiveTool] = useState<ToolName>("WindowLevel");
-  const [slice, setSlice] = useState<{ idx: number; total: number } | null>(
-    null
-  );
   const [refining, setRefining] = useState<Finding | null>(null);
   const [activeIdx, setActiveIdx] = useState(0);
   const [priorsOpen, setPriorsOpen] = useState(false);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
-  const [compareStudyId, setCompareStudyId] = useState<string | null>(null);
-  const [compareStudy, setCompareStudy] = useState<Study | null>(null);
   const [chatOpen, setChatOpen] = useState(false);
+
+  const [layout, setLayout] = useState<Layout>("1x1");
+  const [slots, setSlots] = useState<ViewportSlot[]>([
+    { id: "vp-1" },
+  ]);
+  const [activeSlot, setActiveSlot] = useState(0);
+  const [sync, setSync] = useState(true);
+  const handlesRef = useRef<(ViewerHandle | null)[]>([]);
 
   const refresh = useCallback(async () => {
     try {
@@ -143,9 +157,7 @@ export default function StudyPage() {
     setBusy(true);
     try {
       await api.signReport(studyId);
-      toast.success("Report signed", {
-        description: "Carries the radiologist signature.",
-      });
+      toast.success("Report signed");
       await refresh();
     } catch (e) {
       toast.error("Sign failed", {
@@ -189,7 +201,7 @@ export default function StudyPage() {
     }
   }
 
-  // Global keyboard shortcuts. Skip when typing in an input/textarea.
+  // Keyboard shortcuts (chat / cine handle their own keys)
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       const tgt = e.target as HTMLElement | null;
@@ -229,18 +241,6 @@ export default function StudyPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [findings, activeIdx, report, study]);
 
-  // When user picks a prior, load it for side-by-side viewing
-  useEffect(() => {
-    if (!compareStudyId) {
-      setCompareStudy(null);
-      return;
-    }
-    api
-      .getStudy(compareStudyId)
-      .then(setCompareStudy)
-      .catch(() => setCompareStudy(null));
-  }, [compareStudyId]);
-
   async function saveRefinement() {
     if (!refining) return;
     setBusy(true);
@@ -272,6 +272,40 @@ export default function StudyPage() {
     }
   }
 
+  function loadPrior(priorStudyId: string) {
+    // Fetch the prior's UID + drop its primary series into slot 2 (creates a 1x2 layout)
+    api
+      .getStudy(priorStudyId)
+      .then((s) => {
+        setLayout("1x2");
+        setSlots((cur) => {
+          const next = [...cur];
+          // Slot 0 remains the current study
+          next[1] = {
+            id: `vp-prior-${priorStudyId.slice(0, 6)}`,
+            studyInstanceUID: s.study_instance_uid,
+            label: `Prior · ${s.modality} ${s.body_part}`,
+          };
+          return next;
+        });
+        setActiveSlot(1);
+        setPriorsOpen(false);
+        toast.info("Prior loaded into viewport 2");
+      })
+      .catch((e) =>
+        toast.error("Couldn't load prior", {
+          description: e instanceof Error ? e.message : String(e),
+        })
+      );
+  }
+
+  const activeSeriesUid = slots[activeSlot]?.seriesInstanceUID;
+
+  const getActiveHandle = useCallback(
+    () => handlesRef.current[activeSlot] ?? null,
+    [activeSlot]
+  );
+
   if (error)
     return (
       <Card className="border-destructive/30">
@@ -290,57 +324,44 @@ export default function StudyPage() {
     );
 
   return (
-    <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_380px]">
-      <section
-        className={cn(
-          "flex min-h-[560px] flex-col overflow-hidden rounded-lg border border-zinc-800 bg-black",
-          compareStudy && "min-h-[640px]"
-        )}
-      >
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-[200px_minmax(0,1fr)_360px]">
+      <aside className="hidden lg:block">
+        <SeriesPanel
+          studyInstanceUID={study.study_instance_uid}
+          activeSeriesUid={activeSeriesUid}
+          onSelect={(uid) => {
+            setSlots((cur) => {
+              const next = [...cur];
+              next[activeSlot] = { ...next[activeSlot], seriesInstanceUID: uid };
+              return next;
+            });
+          }}
+        />
+      </aside>
+
+      <section className="flex min-h-[600px] flex-col overflow-hidden rounded-lg border border-zinc-800 bg-black">
         <Toolbar active={activeTool} onChange={setActiveTool} />
-        <div
-          className={cn(
-            "relative flex-1",
-            compareStudy && "grid grid-cols-2 gap-px bg-zinc-800"
-          )}
-        >
-          <div className="relative">
-            {compareStudy && (
-              <div className="absolute left-2 top-2 z-10 rounded bg-black/60 px-2 py-0.5 text-[10px] uppercase tracking-wide text-white">
-                Current
-              </div>
-            )}
-            <CornerstoneViewer
-              studyInstanceUID={study.study_instance_uid}
-              activeTool={activeTool}
-              onSliceChange={(idx, total) => setSlice({ idx, total })}
-            />
-          </div>
-          {compareStudy && (
-            <div className="relative">
-              <div className="absolute left-2 top-2 z-10 rounded bg-primary/80 px-2 py-0.5 text-[10px] uppercase tracking-wide text-white">
-                Prior · {compareStudy.modality} · {compareStudy.body_part}
-              </div>
-              <button
-                onClick={() => setCompareStudyId(null)}
-                className="absolute right-2 top-2 z-10 rounded bg-black/60 px-2 py-0.5 text-[10px] text-white hover:bg-black/80"
-              >
-                Close
-              </button>
-              <CornerstoneViewer
-                studyInstanceUID={compareStudy.study_instance_uid}
-                activeTool={activeTool}
-                onSliceChange={() => {}}
-              />
-            </div>
-          )}
-          {slice && !compareStudy && (
-            <div className="absolute bottom-2 right-2 rounded bg-black/60 px-2 py-1 text-[10px] text-white">
-              slice {slice.idx} / {slice.total}
-            </div>
-          )}
-          {refining && (
-            <div className="absolute left-2 right-2 top-2 flex items-center justify-between rounded-md bg-primary/20 px-3 py-2 text-xs text-white backdrop-blur">
+        <div className="flex-1">
+          <ViewportGrid
+            studyInstanceUID={study.study_instance_uid}
+            activeTool={activeTool}
+            layout={layout}
+            onLayoutChange={setLayout}
+            slots={slots}
+            setSlots={setSlots}
+            activeSlotIdx={activeSlot}
+            setActiveSlotIdx={setActiveSlot}
+            sync={sync}
+            setSync={setSync}
+            registerHandle={(i, h) => {
+              handlesRef.current[i] = h;
+            }}
+          />
+        </div>
+        <CineControls getActive={getActiveHandle} />
+        {refining && (
+          <div className="border-t border-primary/40 bg-primary/20 px-3 py-2 text-xs text-white backdrop-blur">
+            <div className="flex items-center justify-between gap-2">
               <span>
                 Refining <b>{refining.label}</b> · paint with the Brush tool,
                 then save.
@@ -368,8 +389,8 @@ export default function StudyPage() {
                 </Button>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </section>
 
       <aside className="flex flex-col gap-4">
@@ -426,6 +447,12 @@ export default function StudyPage() {
             >
               <History />
               Priors
+            </Button>
+            <Button asChild size="sm" variant="outline">
+              <Link href={`/studies/${studyId}/plan`}>
+                <Stethoscope />
+                Plan
+              </Link>
             </Button>
             <Button
               size="sm"
@@ -604,11 +631,7 @@ export default function StudyPage() {
         onOpenChange={setPriorsOpen}
         pseudonym={study.patient_pseudonym ?? null}
         currentStudyId={studyId}
-        onSelect={(id) => {
-          setCompareStudyId(id);
-          setPriorsOpen(false);
-          toast.info("Prior loaded for side-by-side comparison");
-        }}
+        onSelect={loadPrior}
       />
       <KeyboardShortcuts open={shortcutsOpen} onOpenChange={setShortcutsOpen} />
 

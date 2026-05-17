@@ -18,6 +18,10 @@ const SHORTCUTS: { keys: string[]; label: string }[] = [
   { keys: ["E"], label: "Refine current finding" },
   { keys: ["S"], label: "Sign report" },
   { keys: ["P"], label: "Compare priors" },
+  { keys: ["Tab"], label: "Cycle active viewport" },
+  { keys: ["Space"], label: "Play / pause cine" },
+  { keys: ["["], label: "Cine slower (fps −1)" },
+  { keys: ["]"], label: "Cine faster (fps +1)" },
   { keys: ["?"], label: "Show this overlay" },
   { keys: ["⌘", "K"], label: "Open command palette" },
 ];
