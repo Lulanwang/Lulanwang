@@ -129,6 +129,45 @@ export const api = {
       Array<{ code: string; description: string; category: string; body_part: string }>
     >(`/icd10/search?q=${encodeURIComponent(q)}`),
 
+  dashboardKpis: () =>
+    request<{
+      studies_7d: number;
+      signed_reports: number;
+      mean_latency_ms: number;
+      accept_rate: number | null;
+      reviewed_findings: number;
+    }>("/dashboard/kpis"),
+  dashboardStudiesPerDay: (days = 30) =>
+    request<Array<{ date: string; count: number }>>(
+      `/dashboard/studies-per-day?days=${days}`
+    ),
+  dashboardModalityBreakdown: () =>
+    request<Array<{ modality: string; count: number }>>(
+      "/dashboard/modality-breakdown"
+    ),
+  dashboardRecentActivity: (limit = 10) =>
+    request<
+      Array<{
+        id: string;
+        created_at: string | null;
+        action: string;
+        actor_role: string | null;
+        resource_type: string | null;
+        resource_id: string | null;
+      }>
+    >(`/dashboard/recent-activity?limit=${limit}`),
+  dashboardUnsigned: (limit = 5) =>
+    request<
+      Array<{
+        id: string;
+        description: string;
+        modality: string;
+        body_part: string;
+        state: string;
+        created_at: string | null;
+      }>
+    >(`/dashboard/unsigned-studies?limit=${limit}`),
+
   listAudit: () =>
     request<
       Array<{
