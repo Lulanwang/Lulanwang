@@ -25,3 +25,7 @@ data/monai-bundles/
 .idea/
 *.swp
 .DS_Store
+
+# Playwright (generated, can grow to >100 MB on failure)
+frontend/playwright-report/
+frontend/test-results/

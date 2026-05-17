@@ -11,7 +11,8 @@
  * provider so every WADO-RS request includes our JWT — this is what
  * makes the audit log on the FastAPI DICOMweb proxy work.
  */
-import { init as csInit, imageLoader, metaData, RenderingEngine, Types } from "@cornerstonejs/core";
+import * as cornerstone from "@cornerstonejs/core";
+import { init as csInit, type Types } from "@cornerstonejs/core";
 import { init as csToolsInit, addTool, ToolGroupManager, PanTool, ZoomTool, WindowLevelTool, StackScrollTool, LengthTool, RectangleROITool, EllipticalROITool, BrushTool, RectangleScissorsTool, segmentation as csSeg } from "@cornerstonejs/tools";
 import cornerstoneDICOMImageLoader from "@cornerstonejs/dicom-image-loader";
 import dicomParser from "dicom-parser";
@@ -48,7 +49,11 @@ export function ensureCornerstone(): Promise<void> {
     await csInit();
     await csToolsInit();
 
-    cornerstoneDICOMImageLoader.external.cornerstone = { metaData, imageLoader };
+    // The DICOM image loader bundle calls `cornerstone.registerImageLoader`,
+    // `cornerstone.metaData.addProvider`, `cornerstone.utilities.isVideoTransferSyntax`,
+    // etc. as top-level methods, so we pass the entire core namespace —
+    // not the {metaData, imageLoader} subset we used to.
+    cornerstoneDICOMImageLoader.external.cornerstone = cornerstone;
     cornerstoneDICOMImageLoader.external.dicomParser = dicomParser;
     cornerstoneDICOMImageLoader.configure({
       useWebWorkers: true,

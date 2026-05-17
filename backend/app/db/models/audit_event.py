@@ -24,7 +24,10 @@ class AuditEvent(Base, TimestampMixin):
     actor_role: Mapped[str | None] = mapped_column(String(32), nullable=True)
     action: Mapped[str] = mapped_column(String(64), nullable=False, index=True)
     resource_type: Mapped[str | None] = mapped_column(String(64), nullable=True)
-    resource_id: Mapped[str | None] = mapped_column(String(128), nullable=True, index=True)
+    # 512 chars to safely hold full DICOMweb resource paths:
+    # `studies/{64-char UID}/series/{64-char UID}/instances/{64-char UID}/frames/N`
+    # is ~155 chars; the previous 128-cap broke WADO audit inserts.
+    resource_id: Mapped[str | None] = mapped_column(String(512), nullable=True, index=True)
     request_id: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
     ip: Mapped[str | None] = mapped_column(String(64), nullable=True)
     user_agent: Mapped[str | None] = mapped_column(String(255), nullable=True)
