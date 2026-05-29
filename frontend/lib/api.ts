@@ -402,6 +402,57 @@ export const api = {
         details: Record<string, unknown> | null;
       }>
     >("/audit/"),
+
+  // ---------- 3D digital twin (research-only) ----------
+  generateTwin: (study_id: string, force = false) =>
+    request<{ twin_id: string; status: TwinStatus }>(
+      `/twins/${study_id}/generate${force ? "?force=true" : ""}`,
+      { method: "POST" }
+    ),
+  getTwin: (study_id: string) => request<OrganTwin>(`/twins/${study_id}`),
+  fetchTwinGlb: async (study_id: string): Promise<ArrayBuffer> => {
+    // Auth-injected fetch — drei's useGLTF cannot send our Authorization
+    // header, so we pull the binary ourselves and hand the buffer to
+    // GLTFLoader.parse on the viewer side.
+    const headers = new Headers();
+    const tok = getToken();
+    if (tok) headers.set("Authorization", `Bearer ${tok}`);
+    headers.set("Accept", "model/gltf-binary");
+    const res = await fetch(`${BASE}/twins/${study_id}/model.glb`, { headers });
+    if (res.status === 401) {
+      setToken(null);
+      if (typeof window !== "undefined") window.location.href = "/login";
+      throw new Error("unauthorized");
+    }
+    if (!res.ok) throw new Error(`twin GLB ${res.status}`);
+    return await res.arrayBuffer();
+  },
+};
+
+export type TwinStatus = "queued" | "running" | "succeeded" | "failed";
+
+export type TwinStructure = {
+  name: string;
+  kind: "organ" | "lesion";
+  color: string;
+  volume_cm3: number;
+  vertices: number;
+  faces: number;
+  bounds_mm: number[][] | null;
+  synthetic_marker?: boolean;
+  synthetic_extrusion?: boolean;
+};
+
+export type OrganTwin = {
+  id: string;
+  study_id: string;
+  job_id: string | null;
+  status: TwinStatus;
+  seg_config_version: string;
+  body_part: string;
+  structures: TwinStructure[] | null;
+  glb_bytes: number | null;
+  error: string | null;
 };
 
 export { request };

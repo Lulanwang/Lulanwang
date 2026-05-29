@@ -94,3 +94,54 @@ def assemble_volume(datasets: Iterable[Dataset]) -> np.ndarray:
         return np.zeros((0, 0, 0), dtype=np.float32)
     slices = [_apply_modality_lut(d.pixel_array, d) for d in sorted_ds]
     return np.stack(slices, axis=0).astype(np.float32)
+
+
+def spacing_from(datasets: Iterable[Dataset]) -> tuple[float, float, float]:
+    """Return ``(sz, sy, sx)`` voxel spacing in millimetres for a sorted series.
+
+    Row/column spacing comes from ``PixelSpacing`` (rows first per DICOM).
+    Slice spacing is the median absolute distance between consecutive
+    ``ImagePositionPatient`` values projected onto the slice normal —
+    robust to gaps and irregular axial sampling. Falls back to
+    ``SpacingBetweenSlices`` → ``SliceThickness`` → 1.0 when geometry is
+    missing (e.g. single-slice 2D MG).
+
+    Returned in (Z, Y, X) order to match :func:`assemble_volume`'s axis
+    order, so callers can pass it straight into
+    ``skimage.measure.marching_cubes(..., spacing=spacing_zyx)`` and get
+    vertices in real-world millimetres.
+    """
+    ds_list = sorted(
+        [d for d in datasets if hasattr(d, "PixelData")], key=_sort_key
+    )
+    if not ds_list:
+        return (1.0, 1.0, 1.0)
+    first = ds_list[0]
+    px = getattr(first, "PixelSpacing", None)
+    sy = float(px[0]) if px and len(px) >= 2 else 1.0
+    sx = float(px[1]) if px and len(px) >= 2 else 1.0
+
+    sz: float | None = None
+    if len(ds_list) >= 2:
+        iop = getattr(first, "ImageOrientationPatient", None)
+        if iop and len(iop) == 6:
+            row = np.array(iop[:3], dtype=float)
+            col = np.array(iop[3:], dtype=float)
+            normal = np.cross(row, col)
+            positions: list[float] = []
+            for d in ds_list:
+                ipp = getattr(d, "ImagePositionPatient", None)
+                if ipp and len(ipp) == 3:
+                    positions.append(
+                        float(np.dot(np.array(ipp, dtype=float), normal))
+                    )
+            if len(positions) >= 2:
+                diffs = np.abs(np.diff(np.array(positions, dtype=float)))
+                diffs = diffs[diffs > 1e-6]  # drop duplicate-position slices
+                if diffs.size:
+                    sz = float(np.median(diffs))
+    if sz is None:
+        sbs = getattr(first, "SpacingBetweenSlices", None)
+        st = getattr(first, "SliceThickness", None)
+        sz = float(sbs or st or 1.0)
+    return (sz, sy, sx)

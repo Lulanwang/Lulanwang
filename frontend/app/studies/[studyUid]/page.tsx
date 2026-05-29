@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import {
+  Boxes,
   CheckCircle2,
   Download,
   FileJson,
@@ -452,6 +453,12 @@ export default function StudyPage() {
               <Link href={`/studies/${studyId}/plan`}>
                 <Stethoscope />
                 Plan
+              </Link>
+            </Button>
+            <Button asChild size="sm" variant="outline" title="3D digital twin (research only)">
+              <Link href={`/studies/${studyId}/twin`}>
+                <Boxes />
+                3D Twin
               </Link>
             </Button>
             <Button
