@@ -188,9 +188,6 @@ def run_inference(db: Session, job_id: uuid.UUID) -> None:
         study.state = "inferred"
         db.commit()
 
-        # Auto-generate a draft report so the demo is one click away
-        generate_report(db, study.id, signed_by=None)
-
         log_event(
             db,
             actor_id=None,
@@ -209,6 +206,22 @@ def run_inference(db: Session, job_id: uuid.UUID) -> None:
         study.state = "failed"
         study.error = str(exc)[:1000]
         db.commit()
+        return
+
+    # Auto-generate a draft report so the demo is one click away. This runs
+    # OUTSIDE the inference try: inference + findings are already committed
+    # as `succeeded`/`inferred`, so a report-draft failure (disk, SR/FHIR
+    # builder) must NOT regress the study to `failed`. The study simply
+    # stays `inferred` with no draft report; the Sign button generates it
+    # on demand.
+    try:
+        generate_report(db, study.id, signed_by=None)
+    except Exception:  # noqa: BLE001
+        db.rollback()
+        log.exception(
+            "draft report generation failed for study %s (inference kept)",
+            study.id,
+        )
 
 
 def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | None) -> Report:
@@ -279,8 +292,14 @@ def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | 
             icd10=f.icd10_suggestion,
             model_name=f.model_name,
             model_version=f.model_version,
+            rads=(f.geometry or {}).get("rads") if f.geometry else None,
         )
         for f in findings
+    ]
+    rads_scores = [
+        (f.geometry or {}).get("rads")
+        for f in findings
+        if f.geometry and f.geometry.get("rads")
     ]
     sr = build_sr(
         study_instance_uid=study.study_instance_uid,
@@ -304,6 +323,7 @@ def generate_report(db: Session, study_id: uuid.UUID, *, signed_by: uuid.UUID | 
         model_name=findings[0].model_name if findings else "MockModel",
         model_version=findings[0].model_version if findings else "0.0",
         narrative=narrative_text,
+        rads_scores=rads_scores,
     )
 
     report = (

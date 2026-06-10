@@ -1,0 +1,24 @@
+{
+  "oars": {},
+  "global": {
+    "max": 60.0,
+    "v20": 0.04,
+    "v30": 0.012,
+    "mean": 2.92
+  },
+  "modality": "proton",
+  "isocenter": [
+    16.0,
+    16.0,
+    16.0
+  ],
+  "disclaimer": "RESEARCH USE ONLY. Synthetic Gaussian-superposition model \u2014 not Monte Carlo. Do not use for clinical decision-making.",
+  "grid_shape": [
+    32,
+    32,
+    32
+  ],
+  "spacing_cm": 0.5,
+  "computed_at": "2026-05-17T04:12:32.958750+00:00",
+  "prescription_dose_gy": 60.0
+}

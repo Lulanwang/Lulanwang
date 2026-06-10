@@ -1,9 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ShieldCheck } from "lucide-react";
 import { api } from "@/lib/api";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Badge } from "@/components/ui/badge";
 
 type Row = Awaited<ReturnType<typeof api.listAudit>>[number];
+
+const ACTION_VARIANT: Record<string, "success" | "warning" | "destructive" | "secondary" | "ai"> =
+  {
+    "auth.login": "success",
+    "auth.failed": "destructive",
+    "study.view": "secondary",
+    "report.view": "secondary",
+    "report.signed": "success",
+    "report.narrative_generated": "ai",
+    "inference.completed": "ai",
+    "inference.failed": "destructive",
+  };
 
 export default function AuditPage() {
   const [rows, setRows] = useState<Row[] | null>(null);
@@ -18,53 +34,98 @@ export default function AuditPage() {
 
   if (error)
     return (
-      <div className="text-sm text-red-600">
-        {error}
-        <div className="text-gray-500 text-xs mt-1">Admin role required.</div>
-      </div>
+      <Card className="border-destructive/30">
+        <CardContent className="pt-4 text-sm text-destructive">
+          {error}
+          <div className="mt-1 text-xs text-muted-foreground">
+            Admin role required.
+          </div>
+        </CardContent>
+      </Card>
     );
-  if (!rows) return <div className="text-sm text-gray-500">Loading audit log…</div>;
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-3">
-        <h1 className="text-lg font-semibold">Audit log</h1>
-        <span className="text-xs text-gray-500">{rows.length} recent events</span>
+    <div className="space-y-4">
+      <div className="flex items-end justify-between">
+        <div>
+          <h1 className="flex items-center gap-2 text-xl font-semibold">
+            <ShieldCheck className="h-5 w-5 text-primary" /> Audit log
+          </h1>
+          <p className="text-xs text-muted-foreground">
+            Append-only record of every authenticated action.
+          </p>
+        </div>
+        {rows && (
+          <span className="text-xs text-muted-foreground">
+            {rows.length} recent events
+          </span>
+        )}
       </div>
-      <div className="overflow-x-auto bg-white border rounded">
-        <table className="w-full text-xs">
-          <thead className="bg-gray-50 text-left uppercase text-gray-500">
-            <tr>
-              <th className="px-3 py-2">Time</th>
-              <th className="px-3 py-2">Actor</th>
-              <th className="px-3 py-2">Role</th>
-              <th className="px-3 py-2">Action</th>
-              <th className="px-3 py-2">Resource</th>
-              <th className="px-3 py-2">IP</th>
-              <th className="px-3 py-2">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => (
-              <tr key={r.id} className="border-t">
-                <td className="px-3 py-1 whitespace-nowrap text-gray-700">
-                  {new Date(r.created_at).toLocaleString()}
-                </td>
-                <td className="px-3 py-1 font-mono">{r.actor_id?.slice(0, 8) || "—"}</td>
-                <td className="px-3 py-1">{r.actor_role || "—"}</td>
-                <td className="px-3 py-1 font-medium">{r.action}</td>
-                <td className="px-3 py-1 truncate max-w-xs">
-                  {r.resource_type ? `${r.resource_type}:${r.resource_id?.slice(0, 12)}` : "—"}
-                </td>
-                <td className="px-3 py-1">{r.ip || "—"}</td>
-                <td className="px-3 py-1 text-gray-500 truncate max-w-md">
-                  {r.details ? JSON.stringify(r.details) : "—"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+
+      <Card>
+        <CardHeader className="border-b">
+          <CardTitle className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            Events
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="p-0">
+          {!rows && (
+            <div className="space-y-2 p-4">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <Skeleton key={i} className="h-8 w-full" />
+              ))}
+            </div>
+          )}
+          {rows && (
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs">
+                <thead className="border-b text-left uppercase tracking-wide text-muted-foreground">
+                  <tr>
+                    <th className="px-4 py-2 font-medium">Time</th>
+                    <th className="px-4 py-2 font-medium">Actor</th>
+                    <th className="px-4 py-2 font-medium">Role</th>
+                    <th className="px-4 py-2 font-medium">Action</th>
+                    <th className="px-4 py-2 font-medium">Resource</th>
+                    <th className="px-4 py-2 font-medium">IP</th>
+                    <th className="px-4 py-2 font-medium">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((r) => (
+                    <tr key={r.id} className="border-t hover:bg-muted/50">
+                      <td className="whitespace-nowrap px-4 py-1.5 text-muted-foreground">
+                        {new Date(r.created_at).toLocaleString()}
+                      </td>
+                      <td className="px-4 py-1.5 font-mono">
+                        {r.actor_id?.slice(0, 8) || "—"}
+                      </td>
+                      <td className="px-4 py-1.5">{r.actor_role || "—"}</td>
+                      <td className="px-4 py-1.5">
+                        <Badge
+                          variant={ACTION_VARIANT[r.action] || "secondary"}
+                        >
+                          {r.action}
+                        </Badge>
+                      </td>
+                      <td className="max-w-xs truncate px-4 py-1.5 font-mono text-muted-foreground">
+                        {r.resource_type
+                          ? `${r.resource_type}:${r.resource_id?.slice(0, 12)}`
+                          : "—"}
+                      </td>
+                      <td className="px-4 py-1.5 text-muted-foreground">
+                        {r.ip || "—"}
+                      </td>
+                      <td className="max-w-md truncate px-4 py-1.5 font-mono text-muted-foreground">
+                        {r.details ? JSON.stringify(r.details) : "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

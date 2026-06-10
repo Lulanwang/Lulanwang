@@ -41,6 +41,14 @@ by `make seed`. The worklist will show the seeded studies.
 - **Narrative writer**: MedGemma (`google/medgemma-4b-it`) writes a
   free-text clinical narrative on top of structured findings; mock
   backend by default, Hugging Face Inference Endpoint when configured
+- **Multi-viewport + cine** (Round 9): 1×1 → 3×3 viewport grid with
+  sync-scroll, drag-and-drop series, cine playback (play/pause/fps)
+- **Treatment-planning workspace** (Round 9 — **RESEARCH ONLY, NOT A
+  TPS**): contouring (GTV/CTV/PTV/OAR) + beam planner with axial
+  visualizer + OAR constraint evaluation against RTOG/QUANTEC limits
+  + synthetic dose summary. Doses are illustrative Gaussian
+  superposition — not Monte Carlo. Plans cannot be delivered to a real
+  linac. See `MODEL_CARDS.md` §7 for the failure-mode catalog.
 - **Audit**: append-only `audit_events` table, every PHI access logged
 
 ## Switching from mock to real AI

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, status
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
 from app.core.audit import log_event
@@ -11,8 +11,12 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 
 
 class LoginIn(BaseModel):
-    email: EmailStr
-    password: str
+    # Plain str — full EmailStr validation rejects reserved TLDs like
+    # `.local`, which the demo accounts use. The downstream lookup
+    # against the DB enforces existence + bcrypt verifies the password,
+    # so we don't need strict syntax validation here.
+    email: str = Field(min_length=3, max_length=320)
+    password: str = Field(min_length=1, max_length=512)
 
 
 class LoginOut(BaseModel):
@@ -57,7 +61,7 @@ def login(body: LoginIn, request: Request, db: Session = Depends(get_db)) -> Log
 
 class MeOut(BaseModel):
     user_id: str
-    email: EmailStr
+    email: str
     role: str
     full_name: str
 

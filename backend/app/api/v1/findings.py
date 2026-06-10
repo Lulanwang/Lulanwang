@@ -27,12 +27,13 @@ from sqlalchemy.orm import Session
 
 from app.core.audit import log_event
 from app.core.config import settings
-from app.core.security import current_user
+from app.core.security import current_user, require_role
 from app.db.models.finding import Finding
 from app.db.models.study import Study
 from app.db.models.user import User
 from app.db.session import get_db
 from app.dicom.seg_writer import write_segmentation
+from app.services import rads
 from pathlib import Path
 
 router = APIRouter(prefix="/findings", tags=["findings"])
@@ -144,7 +145,7 @@ def accept_finding(
     finding_id: uuid.UUID,
     body: AcceptIn,
     request: Request,
-    user: User = Depends(current_user),
+    user: User = Depends(require_role("clinician", "admin")),
     db: Session = Depends(get_db),
 ) -> FindingDetail:
     f = db.get(Finding, finding_id)
@@ -178,7 +179,7 @@ def accept_finding(
 def reject_finding(
     finding_id: uuid.UUID,
     request: Request,
-    user: User = Depends(current_user),
+    user: User = Depends(require_role("clinician", "admin")),
     db: Session = Depends(get_db),
 ) -> FindingDetail:
     f = db.get(Finding, finding_id)
@@ -205,6 +206,81 @@ def reject_finding(
     return _to_detail(f)
 
 
+class RadsIn(BaseModel):
+    scheme: str
+    code: str
+
+
+@router.post("/{finding_id}/rads", response_model=FindingDetail)
+def set_rads(
+    finding_id: uuid.UUID,
+    body: RadsIn,
+    request: Request,
+    user: User = Depends(require_role("clinician", "admin")),
+    db: Session = Depends(get_db),
+) -> FindingDetail:
+    """Attach a RADS score to a finding (BI-RADS / Lung-RADS / BT-RADS).
+
+    Stored in finding.geometry['rads']; pickup by SR + FHIR + MedGemma is
+    automatic on the next report generation.
+    """
+    f = db.get(Finding, finding_id)
+    if f is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "finding not found")
+    if not f.is_current:
+        raise HTTPException(
+            status.HTTP_409_CONFLICT, "only the current version can be scored"
+        )
+    try:
+        score = rads.build_score(
+            scheme=body.scheme,  # type: ignore[arg-type]
+            code=body.code,
+            scored_by=str(user.id),
+        )
+    except ValueError as exc:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, str(exc)) from exc
+
+    geom = dict(f.geometry or {})
+    geom["rads"] = score
+    f.geometry = geom
+    # SQLAlchemy JSONB needs an explicit flag for in-place mutation
+    from sqlalchemy.orm.attributes import flag_modified
+
+    flag_modified(f, "geometry")
+    db.commit()
+    db.refresh(f)
+
+    log_event(
+        db,
+        actor_id=user.id,
+        actor_role=user.role,
+        action="finding.rads_set",
+        resource_type="finding",
+        resource_id=str(f.id),
+        request_id=request.headers.get("x-request-id"),
+        details={
+            "study_id": str(f.study_id),
+            "scheme": score["scheme"],
+            "code": score["code"],
+        },
+    )
+    return _to_detail(f)
+
+
+@router.get("/rads/schemes")
+def rads_schemes(
+    user: User = Depends(current_user),
+) -> dict:
+    """Static catalog of supported schemes + codes for the picker UI."""
+    return {
+        name: [
+            {"code": c.code, "descriptor": c.descriptor}
+            for c in codes
+        ]
+        for name, codes in rads.ALL.items()
+    }
+
+
 @router.post("/{finding_id}/refine", response_model=FindingDetail)
 async def refine_finding(
     finding_id: uuid.UUID,
@@ -213,7 +289,7 @@ async def refine_finding(
     icd10_suggestion: str | None = Form(default=None),
     geometry: str = Form(...),  # JSON-encoded; bbox/polygon/etc.
     mask: UploadFile | None = File(default=None),  # optional .npy mask
-    user: User = Depends(current_user),
+    user: User = Depends(require_role("clinician", "admin")),
     db: Session = Depends(get_db),
 ) -> FindingDetail:
     """Append a radiologist-refined finding.

@@ -28,31 +28,27 @@ export default function ViewerPage() {
   }, [studyId]);
 
   return (
-    <div className="h-screen w-screen bg-black text-white flex flex-col">
-      <div className="text-[10px] bg-warn-100 text-warn-700 border-b border-warn-500 px-2 py-1">
-        RESEARCH USE ONLY — NOT A MEDICAL DEVICE
+    <div className="flex h-full min-h-[60vh] flex-col items-center justify-center gap-3 rounded-lg border bg-black text-white">
+      <div className="text-[10px] uppercase tracking-widest text-zinc-500">
+        DICOM viewer
       </div>
-      <div className="flex-1 flex items-center justify-center">
-        <div className="text-center px-6">
-          <div className="text-xs uppercase tracking-widest text-gray-500">DICOM viewer</div>
-          <div className="mt-2 text-sm">
-            {study ? (
-              <>
-                Study <span className="font-mono">{study.study_instance_uid}</span>
-                <br />
-                Modality {study.modality} · Body part {study.body_part}
-              </>
-            ) : (
-              "Loading study…"
-            )}
-          </div>
-          <div className="mt-6 text-xs text-gray-400 max-w-md mx-auto leading-relaxed">
-            OHIF Viewer v3 mounts here. The frontend fetches images via
-            <code className="bg-gray-800 px-1 rounded mx-1">/dicom-web/*</code>
-            which Caddy routes to FastAPI&apos;s authenticated DICOMweb proxy.
-            Every WADO-RS pull is recorded in the audit log.
-          </div>
-        </div>
+      <div className="text-sm">
+        {study ? (
+          <>
+            Study{" "}
+            <span className="font-mono">{study.study_instance_uid}</span>
+            <br />
+            Modality {study.modality} · Body part {study.body_part}
+          </>
+        ) : (
+          "Loading study…"
+        )}
+      </div>
+      <div className="max-w-md px-6 text-center text-xs leading-relaxed text-zinc-400">
+        OHIF Viewer v3 mounts here. The frontend fetches images via
+        <code className="mx-1 rounded bg-zinc-800 px-1">/dicom-web/*</code>
+        which Caddy routes to FastAPI&apos;s authenticated DICOMweb proxy.
+        Every WADO-RS pull is recorded in the audit log.
       </div>
     </div>
   );

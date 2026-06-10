@@ -3,7 +3,24 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.v1 import auth, audit, dicomweb_proxy, findings, health, icd10, jobs, reports, studies, upload
+from app.api.v1 import (
+    analytics,
+    audit,
+    auth,
+    chat,
+    dashboard,
+    dicomweb_proxy,
+    findings,
+    health,
+    icd10,
+    jobs,
+    patients,
+    reports,
+    studies,
+    treatment_plans,
+    twins,
+    upload,
+)
 from app.core.logging import configure_logging
 from app.workers.background import recover_orphaned_jobs
 
@@ -43,6 +60,12 @@ app.include_router(reports.router, prefix=API_PREFIX)
 app.include_router(findings.router, prefix=API_PREFIX)
 app.include_router(icd10.router, prefix=API_PREFIX)
 app.include_router(audit.router, prefix=API_PREFIX)
+app.include_router(dashboard.router, prefix=API_PREFIX)
+app.include_router(patients.router, prefix=API_PREFIX)
+app.include_router(chat.router, prefix=API_PREFIX)
+app.include_router(analytics.router, prefix=API_PREFIX)
+app.include_router(treatment_plans.router, prefix=API_PREFIX)
+app.include_router(twins.router, prefix=API_PREFIX)
 
 # DICOMweb proxy is mounted at the root path so OHIF can call /dicom-web/*
 # (Caddy routes /dicom-web/* into FastAPI directly without the /api prefix).
