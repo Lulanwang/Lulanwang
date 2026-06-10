@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
 from app.core.audit import log_event
-from app.core.security import current_user
+from app.core.security import current_user, require_role
 from app.db.models.contour import Contour
 from app.db.models.study import Study
 from app.db.models.treatment_plan import TreatmentPlan
@@ -235,7 +235,7 @@ def patch_plan(
 def approve_plan(
     plan_id: uuid.UUID,
     request: Request,
-    user: User = Depends(current_user),
+    user: User = Depends(require_role("clinician", "admin")),
     db: Session = Depends(get_db),
 ) -> PlanOut:
     from datetime import datetime, timezone

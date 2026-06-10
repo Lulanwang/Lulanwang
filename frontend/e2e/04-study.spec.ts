@@ -124,13 +124,22 @@ test.describe("Study viewer", () => {
     ).toBeVisible({ timeout: 8_000 });
   });
 
-  test("Sign report button signs + shows signed timestamp", async ({
+  test("Sign report button signs (or shows already-signed state)", async ({
     loggedInPage: page,
   }) => {
-    const btn = page.getByRole("button", { name: /Sign report/i });
-    if ((await btn.count()) === 0)
-      test.skip(true, "No Sign report (already signed?)");
-    await btn.click();
+    // The button reads "Sign report" when signable and "Signed" (disabled)
+    // once the report is signed — signing is one-shot, so re-signing is
+    // blocked both client-side (disabled) and server-side (409).
+    const signable = page.getByRole("button", { name: /^Sign report$/i });
+    const alreadySigned = page.getByRole("button", { name: /^Signed$/i });
+    if (await alreadySigned.count()) {
+      await expect(alreadySigned.first()).toBeDisabled();
+      return;
+    }
+    if ((await signable.count()) === 0) {
+      test.skip(true, "No Sign control (no report yet)");
+    }
+    await signable.first().click();
     await expect(
       page.getByText(/signed|^Signed$/i).first()
     ).toBeVisible({ timeout: 10_000 });

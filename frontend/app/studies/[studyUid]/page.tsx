@@ -430,10 +430,11 @@ export default function StudyPage() {
               size="sm"
               variant="success"
               onClick={sign}
-              disabled={busy || !report}
+              disabled={busy || !report || !!report.signed_at}
+              title={report?.signed_at ? "Report already signed" : undefined}
             >
               <CheckCircle2 />
-              Sign report
+              {report?.signed_at ? "Signed" : "Sign report"}
             </Button>
             <Button
               size="sm"

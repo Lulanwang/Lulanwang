@@ -37,6 +37,35 @@ def test_basic_profile_tags_removed():
     assert ds.PatientIdentityRemoved == "YES"
 
 
+def test_private_tags_and_overlays_removed():
+    """Basic Profile mandates stripping ALL private tags and the
+    repeating overlay/curve groups — both are common PHI vectors that
+    the hardcoded BASIC_PROFILE_REMOVE list does not cover."""
+    ds = _load_sample()
+    ds.PatientID = "MRN-99"
+
+    # Inject a vendor private block carrying a patient name (the classic
+    # leak), plus an overlay group with an annotation plane.
+    block = ds.private_block(0x0009, "ACME PRIVATE", create=True)
+    block.add_new(0x01, "LO", "Doe^John (operator note)")
+    ds.add_new(Tag(0x6000, 0x0010), "US", 512)  # OverlayRows
+    ds.add_new(Tag(0x6000, 0x0022), "LO", "PT NAME BURNED IN")  # OverlayDescription
+
+    result = deidentify(ds)
+
+    assert result.ok
+    # No private tags survive
+    private_tags = [el.tag for el in ds if el.tag.is_private]
+    assert private_tags == [], f"private tags leaked: {private_tags}"
+    # No overlay (0x60xx) or curve (0x50xx) repeating-group tags survive
+    repeating = [
+        el.tag
+        for el in ds
+        if 0x5000 <= el.tag.group <= 0x50FF or 0x6000 <= el.tag.group <= 0x60FF
+    ]
+    assert repeating == [], f"overlay/curve tags leaked: {repeating}"
+
+
 def test_date_shift_preserves_intervals():
     ds = _load_sample()
     ds.PatientID = "patient-A"

@@ -8,7 +8,7 @@ from sqlalchemy import asc, desc
 from sqlalchemy.orm import Session
 
 from app.core.audit import log_event
-from app.core.security import current_user
+from app.core.security import current_user, require_role
 from app.db.models.finding import Finding
 from app.db.models.patient import Patient
 from app.db.models.study import Study
@@ -279,9 +279,22 @@ def run_inference_endpoint(
 def sign_report(
     study_id: uuid.UUID,
     request: Request,
-    user: User = Depends(current_user),
+    user: User = Depends(require_role("clinician", "admin")),
     db: Session = Depends(get_db),
 ) -> dict:
+    # Signing is the legal attestation step: gate it by role and by state.
+    # A study can only be signed once it has been through inference (it is
+    # in `inferred` or `reported`); signing a `received`/`queued`/`failed`
+    # or already-`signed` study is rejected.
+    study = db.get(Study, study_id)
+    if study is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "study not found")
+    if study.state not in ("inferred", "reported"):
+        raise HTTPException(
+            status.HTTP_409_CONFLICT,
+            f"cannot sign study in state '{study.state}' "
+            "(must be 'inferred' or 'reported')",
+        )
     report = generate_report(db, study_id, signed_by=user.id)
     log_event(
         db,

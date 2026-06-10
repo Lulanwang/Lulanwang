@@ -130,6 +130,25 @@ def _shift_date(date_str: str, days: int) -> str | None:
         return None
 
 
+def _remove_repeating_groups(ds: Dataset) -> None:
+    """Delete all overlay (0x6000-0x60FF) and curve (0x5000-0x50FF)
+    repeating groups.
+
+    Overlay planes (incl. ``OverlayData``, 0x60xx,3000) frequently carry
+    burned-in annotations and patient identifiers; curve data (retired,
+    but still seen) can carry the same. The Basic Profile removes both.
+    We collect the tags first because deleting during iteration mutates
+    the dataset.
+    """
+    to_delete = [
+        elem.tag
+        for elem in ds
+        if 0x5000 <= elem.tag.group <= 0x50FF or 0x6000 <= elem.tag.group <= 0x60FF
+    ]
+    for tag in to_delete:
+        del ds[tag]
+
+
 def _has_burned_in_phi(ds: Dataset) -> tuple[bool, str | None]:
     if getattr(ds, "BurnedInAnnotation", "").upper() == "YES":
         return True, "BurnedInAnnotation=YES"
@@ -170,6 +189,14 @@ def deidentify(ds: Dataset) -> DeidResult:
         tag = Tag(group, elem)
         if tag in ds:
             del ds[tag]
+
+    # Basic Profile also mandates removing ALL private tags (vendor
+    # private blocks routinely carry patient name, operator, accession,
+    # raw demographics) and stripping repeating overlay/curve groups,
+    # which are a common burned-in-PHI vector. Without these, the
+    # docstring's Annex-E claim would not hold.
+    ds.remove_private_tags()
+    _remove_repeating_groups(ds)
 
     # Date shifting
     for group, elem in DATE_TAGS:
